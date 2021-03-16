@@ -1,0 +1,55 @@
+.image-container{
+  width: 100%;
+  
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid #fff;
+    margin: 10px auto;
+}
+
+    .image-container img {
+        position: absolute;
+        top: -190px;
+       
+        transform: scale(0.6);
+        transition: transform 0.5s ease;
+    }
+
+.image-container:hover img{
+  transform: scale(0.80);
+  cursor: zoom-in;
+}
+
+.overlay{
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  height: 0;
+  transition: height 0.5s ease;
+}
+
+.image-container:hover .overlay{
+  height: 50px;
+}
+.img-dock{
+    display: block;
+    
+    margin: 10px auto;
+}
+.img-dock img{
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 1px solid #333;
+    margin: 0 4px;
+     transition: .5s;
+}
+    .img-dock img:hover {
+        transform: scale(1.5);
+        cursor: zoom-in;
+    }

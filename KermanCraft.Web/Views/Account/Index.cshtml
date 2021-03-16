@@ -1,0 +1,443 @@
+﻿@model KermanCraft.Application.ViewModels.Customer.CustomerViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+
+<link rel="stylesheet" href="~/front/Content/css/3.css">
+<br />
+<br />
+<br />
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-9">
+            <div class="container">
+                <div class="tab-content">
+                    <article class="tab-pane container active" id="lorem-right">
+
+                        <section>
+                            <div class="row ">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <div class="login-box ">
+                                        <br />
+                                        <h3>ویرایش اطلاعات</h3>
+                                        <br />
+                                        <form action="#">
+                                            <input type="text" name="username" placeholder="نام کاربری جدید">
+                                            <input type="password" name="password" placeholder="شماره موبایل">
+                                            <input type="password" name="password" placeholder="رمز عبور">
+                                            <input type="submit" value="ویرایش">
+                                        </form>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                            <br />
+                        </section>
+                    </article>
+                    <article class="tab-pane container" id="ipsum-right">
+
+                        <section>
+                            <div class="row ">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <div class="login-box ">
+                                        <br />
+                                        <h3>تغییر رمز عبور</h3>
+                                        <br />
+                                        <form action="#">
+                                            <input type="text" name="username" placeholder="نام کاربری ">
+                                            <input type="password" name="password" placeholder="رمز عبور">
+                                            <input type="password" name="password" placeholder=" جدید رمز عبور">
+                                            <input type="submit" value="ثبت">
+                                        </form>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </section>
+                    </article>
+                    <article class="tab-pane container" id="ipsum-right1">
+
+                        <section>
+                            <div class="row">
+
+                                <div class="col-sm-4 fg">
+                                    <div class="">
+                                        <p class="pslide1">
+                                            نام رویداد
+                                        </p>
+                                        <p class="pslide1">
+                                            تاریخ برگزاری
+                                        </p>
+                                        <p class="pslide1">
+                                            قیمت
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-4 fg">
+                                    <div class="">
+                                        <p class="pslide1">
+                                            نام رویداد
+                                        </p>
+                                        <p class="pslide1">
+                                            تاریخ برگزاری
+                                        </p>
+                                        <p class="pslide1">
+                                            قیمت
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-4 fg">
+                                    <div class="">
+                                        <p class="pslide1">
+                                            نام رویداد
+                                        </p>
+                                        <p class="pslide1">
+                                            تاریخ برگزاری
+                                        </p>
+                                        <p class="pslide1">
+                                            قیمت
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <ul class="nav nav-tabs right-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#lorem-right" data-toggle="tab">ویرایش اطلاعات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ipsum-right" data-toggle="tab">تغییر رمز</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ipsum-right1" data-toggle="tab">رویداد و جشنواره</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+
+
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/front/Content/css/panelstyle.css">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 vertab-container">
+                <div class="col-lg-3 col-md-3 col-sm-3  vertab-menu">
+                    <div class="h3p">
+                        <h4>@Model.Name @Model.Family</h4>
+                    </div>
+                    <div class="list-group">
+
+                        <a  class="list-group-item text-left"> ویرایش کاربری </a>
+                        <a href="#" class="list-group-item text-left"> سفارشات </a>
+
+                        <a href="#" class="list-group-item text-left"> تغییر رمز </a>
+
+                    </div>
+                </div>
+                <div id="accordion" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 vertab-accordion panel-group">
+                    <div class="h3p">
+                        <h4>@Model.Name @Model.Family</h4>
+                    </div>
+                    <div class="vertab-content">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">
+                                ویرایش کاربری
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                                <div class="h3p1">
+                                    <h4>ویرایش اطلاعات</h4>
+                                </div>
+                                <form action="">
+
+                                    <div class="form-holder active">
+                                        <input type="text" placeholder="   نام کاربری جدید" class="form-control">
+                                    </div>
+                                    <div class="form-holder">
+                                        <input type="text" placeholder="ایمیل خود را وارد کنید" class="form-control">
+                                    </div>
+                                    <div class="form-holder">
+                                        <input type="password" placeholder="پسورد" class="form-control" style="font-size: 15px;">
+                                    </div>
+
+                                    <div class="form-login">
+                                        <button>ویرایش </button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vertab-content">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">
+                            <h4 class="panel-title">
+                                سفارشات
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+
+                                <div class="h3p1">
+                                    <h4>سفارش ها</h4>
+                                </div>
+                                <div class="col-12 offset-0 col-sm-12  s001">
+                                    <div class="wpas">
+
+                                        <table id="edd_user_history" class="edd-table  mytable ">
+                                            <thead>
+                                                <tr class="edd_purchase_row">
+                                                    <th class="edd_purchase_id">  شماره </th>
+                                                    <th class="edd_purchase_date">   تاریخ</th>
+                                                    <th class="edd_purchase_amount">  مقدار</th>
+                                                    <th class="edd_purchase_details"> جزییات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="edd_purchase_row">
+                                                    <td class="edd_purchase_id"> #573526   </td>
+                                                    <td class="edd_purchase_date">2020-04-28</td>
+                                                    <td class="edd_purchase_amount">
+                                                        <span class="edd_purchase_amount">20000 تومان</span>
+                                                    </td>
+                                                    <td class="edd_purchase_details">
+                                                        <a href="#">مشاهده</a>
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr class="edd_purchase_row">
+                                                    <td class="edd_purchase_id"> #573524 </td>
+                                                    <td class="edd_purchase_date">2020-04-28</td>
+                                                    <td class="edd_purchase_amount">
+                                                        <span class="edd_purchase_amount">20000 تومان</span>
+                                                    </td>
+                                                    <td class="edd_purchase_details">
+                                                        <span class="edd_purchase_status failed">ناموفق</span>
+
+                                                    </td>
+                                                </tr>
+
+
+
+                                            </tbody>
+                                        </table>
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vertab-content">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4">
+                                تغییر رمز
+                            </h4>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                                <div class="h3p1">
+                                    <h4>تغییر رمز</h4>
+                                </div>
+                                <form action="">
+
+                                    <div class="form-holder active">
+                                        <input type="text" placeholder="   رمز فعلی خود راوارد کنید" class="form-control">
+                                    </div>
+                                    <div class="form-holder">
+                                        <input type="text" placeholder="رمز جدید" class="form-control">
+                                    </div>
+                                    <div class="form-holder">
+                                        <input type="password" placeholder="تکرار رمز جدید" class="form-control" style="font-size: 15px;">
+                                    </div>
+
+                                    <div class="form-login">
+                                        <button>تغییر رمز </button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @section scripts
+    {
+        <script src="~/front/Script/jquery-3.3.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="~/front/Script/main.js"></script>
+        <script type="text/javascript">
+
+
+            var tc_breakpoint = 767;
+
+            jQuery(document).ready(function () {
+                "use strict";
+
+
+                jQuery(".vertab-container .vertab-menu .list-group a").click(function (e) {
+                    var index = jQuery(this).index();
+                    var container = jQuery(this).parents('.vertab-container');
+                    var accordion = container.find('.vertab-accordion');
+                    var contents = accordion.find(".vertab-content");
+
+                    e.preventDefault();
+
+                    jQuery(this).addClass("active");
+                    jQuery(this).siblings('a.active').removeClass("active");
+
+                    contents.removeClass("active");
+                    contents.eq(index).addClass("active");
+                    container.data('current', index);
+
+
+                    jQuery(this).parents('.vertab-menu').css('min-height', jQuery(container).children('.vertab-accordion').height() + 20);
+                });
+
+
+                jQuery('.vertab-accordion').on('show.bs.collapse', '.collapse', function () {
+                    var accordion, container, current, index;
+
+                    accordion = jQuery(this).parents('.vertab-accordion');
+                    container = accordion.parents('.vertab-container');
+
+                    accordion.find('.collapse.in').each(function () {
+                        jQuery(this).collapse('hide');
+                    });
+
+                    jQuery(this).siblings('.panel-heading').addClass('active');
+
+                    current = accordion.find('.panel-heading.active');
+                    index = accordion.find('.panel-heading').index(current);
+
+                    container.data('current', index);
+                });
+
+
+                jQuery('.vertab-accordion .panel-collapse').on('hide.bs.collapse', function () {
+                    jQuery(this).siblings('.panel-heading').removeClass('active');
+                });
+
+
+                jQuery(window).on("resize orientationchange", function () {
+                    resize_vertical_accordions();
+                });
+
+
+                jQuery(".vertab-accordion .panel-heading").click(function () {
+                    var el = this;
+                    setTimeout(function () { jQuery("html, body").animate({ scrollTop: jQuery(el).offset().top - 10 }, 1000); }, 500);
+
+                    return true;
+                });
+
+
+                resize_vertical_accordions();
+            });
+
+            function resize_vertical_accordions() {
+                "use strict";
+                jQuery('.vertab-container').each(function (i, e) {
+                    var index, menu, contents;
+                    var container = jQuery(this);
+
+                    index = jQuery(this).data('current');
+                    if (index === undefined) {
+                        jQuery(this).data('index', 0);
+                        index = 0;
+                    }
+
+                    if (jQuery(window).width() > tc_breakpoint) {
+
+                        jQuery(this).find('.panel-collapse.collapse').css('height', 'auto');
+
+
+                        menu = jQuery(this).find('.vertab-menu .list-group a');
+                        menu.removeClass("active");
+
+
+                        contents = jQuery(this).find(".vertab-accordion .vertab-content");
+                        contents.removeClass("active");
+
+
+                        menu.eq(index).addClass('active');
+                        contents.eq(index).addClass("active");
+
+
+                        jQuery(this).children('.vertab-menu').css('min-height', jQuery(this).children('.vertab-accordion').height() + 20);
+                    }
+                    else {
+                        jQuery(this).find('.vertab-content .panel-collapse.collapse').collapse('hide');
+
+
+                        jQuery(this).find('.vertab-content .panel-heading').removeClass('active');
+
+
+                        setTimeout(function () {
+                            jQuery(container).find('.vertab-content .panel-heading').eq(index).addClass("active");
+                            jQuery(container).find('.vertab-content .panel-collapse.collapse').eq(index).collapse('show');
+                        }, 1000);
+
+                    }
+                });
+            }
+        </script>
+    }*@
+
+
+
+

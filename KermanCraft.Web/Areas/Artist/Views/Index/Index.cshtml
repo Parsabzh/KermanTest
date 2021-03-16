@@ -1,0 +1,94 @@
+﻿@model KermanCraft.Application.ViewModels.Account.ArtistIndexViewModel
+@{ ViewData["Title"] = "Index"; }
+
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-darkblue shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.Company"></div>
+                    <div class="h3">مرکز</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="far fa-building"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-blue shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.Product"></div>
+                    <div class="h3">محصول</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-box"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-orange shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.Course"></div>
+                    <div class="h3">دوره</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-red shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.Event"></div>
+                    <i class="fas fa-calendar-alt"></i>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-coffee"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+</div><!-- /.row -->
+<hr/>
+<br/>
+<div class="row  ">
+    @if (Model.Package)
+    {
+        <div class="col-lg-12">
+            <div class="portlet box border shadow round">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h3 class="title">
+                            <i class="fas fa-check-square"></i>
+                            اطلاعات بسته
+                        </h3>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <h5> حساب شما داری بسته <kbd class="font-weight-bold">@Model.PackageName</kbd> می باشد . </h5>
+                </div>
+            </div>
+        </div>
+    }
+    else
+            {
+       <div>برای حساب شما هیج بسته ای فعال نیست، لطفا برای خرید بسته <a asp-area="Artist" asp-controller="Package" asp-action="PackageList" class="btn btn-curve btn-success">کلیک</a> کنید!</div>}
+
+</div>
+
+@section scripts
+{
+    <script src="/assets/plugins/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="/assets/plugins/jquery-incremental-counter/jquery.incremental-counter.min.js"></script>
+    <script src="/assets/plugins/ammap3/ammap/ammap.js"></script>
+    <script src="/assets/plugins/ammap3/ammap/maps/js/iranHighFa.js"></script>
+    <script src="/assets/js/pages/dashboard2.js"></script>
+}
+
+

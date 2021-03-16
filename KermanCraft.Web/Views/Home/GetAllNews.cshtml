@@ -1,0 +1,61 @@
+﻿@model IEnumerable<KermanCraft.Application.ViewModels.News.NewsViewModel>
+@{
+    ViewData["Title"] = "GetAllNews";
+}
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span>اخبار</span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+       @if (!Model.Any())
+       {
+           <div class="text-lg-right">موردی وجود ندارد!</div>
+       }
+       else
+       {
+           foreach (var item in Model)
+           {
+               <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                   <div class="card">
+                       @if (item.ImageViewModels.Any())
+                       {<img class="imgneg" src="~/images/News/@item.ImageViewModels.First().ImageUrl" alt="NewImage" />}
+                       else
+                       {
+                           <img class="imgneg" src="~/images/Window/37c051c2-5924-4252-bb0e-ce95bb3994a9.png" alt="NewsImage"/>
+                       }
+                       <br />
+                       <h5>@item.Subject</h5>
+                       <hr />
+
+                       @*<p style="color:black">
+                      @Html.Raw(@item.Text.Substring(0, 5))      ...
+                       </p>*@
+                       <div class="row">
+                           <div class="col"></div>
+                           <div class="col">
+                               <a asp-controller="Home" asp-action="GetNews" asp-route-newsId="@item.NewsId" class="btnkhabar">جزییات </a>
+                           </div>
+                           <div class="col"></div>
+                       </div>
+                   </div>
+               </div>
+           }
+       }
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+

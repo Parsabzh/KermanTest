@@ -1,0 +1,170 @@
+﻿@using KermanCraft.Application.Services
+@using KermanCraft.Application.Interfaces
+@model IEnumerable<KermanCraft.Application.ViewModels.Company.CompanyViewModel>
+@{
+    ViewData["Title"] = "CompanyList";
+}
+@inject IArtistService ArtistService
+@*@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}*@
+
+<div class="portlet-heading">
+    <div class="portlet-title">
+        <h3 class="title">
+            <i class="icon-user"></i>
+            لیست مراکز
+        </h3>
+    </div><!-- /.portlet-title -->
+</div><!-- /.portlet-heading -->
+<div class="table-responsive">
+    <div class="col-md-4 col-12 m-b-20">
+        <a class="btn btn-success btn-curve" asp-area="Artist" asp-action="AddCompany" asp-controller="Company">
+            <i class="icon-plus"></i>
+            افزودن
+        </a>
+    </div>
+    <table class="table table-bordered table-hover table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>نام</th>
+                <th>نوع</th>
+                <th>مدیر عامل</th>
+                <th>وضعیت</th>
+                <td>عملیات</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td>مرکزی یافت نشد.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Type
+                        </td>
+                        @{
+                            var user = await ArtistService.GetArtistUserById(item.PeopleId);
+                        }
+                        @if (!user.IsSuccessful)
+                        {
+                            <td>
+                                نامی ثبت نشده است
+                            </td>
+                        }
+                        else
+                        {
+                            var owner = $"{user.Entity.Name} {user.Entity.Family}";
+                            <td>@owner</td>
+                        }
+
+
+                        @if (item.Status)
+                        {
+                            <td>
+                                <label class="label-success round">فعال</label>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <label class="label-danger round">غیرفعال</label>
+                            </td>
+
+                        }
+                        <td>
+                            <a asp-area="Artist" asp-controller="Company" asp-action="UpdateCompany" asp-route-companyId="@item.CompanyId" class="btn btn-info btn-curve">ویرایش</a>
+                            <button class="btn btn-danger btn-curve select-link" data-id="@item.CompanyId" type="button">حذف</button>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="/assets/plugins/data-table/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/pages/datatable.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script>
+        $(".select-link").click(function() {
+            var id = $(this).data("id");
+            swal({
+                title: 'آیا اطمینان دارید؟',
+                text: "این عملیات برگشت پذیر نیست...",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#f44336',
+                cancelButtonColor: '#777',
+                confirmButtonText: 'بله، حذف شود. ',
+                cancelButtonText: 'انصراف'
+            }).then(function() {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DeleteCompany", "Company", new {Area = "Artist"})",
+                        data: { id: id },
+                        dataType: "text",
+                        @*headers: {
+                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                        },*@
+                        success: function() {
+
+                            swal(
+                                'انتخاب شما حذف کردن بود.',
+                                'فایل شما با موفقیت حذف گدید.',
+                                'success'
+                            ).catch(swal.noop).then(function() {
+                                location.reload();
+                            });
+
+
+                        },
+                        error: function() {
+
+                            swal(
+                                'مشکلی در حذف پیش آمده است،یا پشتیبانی تماس بگیرید.',
+                                'فایل شما حذف نگردید',
+                                'error').catch(swal.noop).then(function () {
+                                    location.reload();
+                                });
+                        }
+                    });
+                },
+                function(dismiss) {
+                    if (dismiss === 'cancel') {
+                        swal(
+                            'لغو گردید',
+                            'فایل شما همچنان وجود دارد.',
+                            'error'
+                        ).catch(swal.noop);;
+                    }
+                }).catch(swal.noop);
+        });
+    </script>
+
+
+    <!-- END PAGE JAVASCRIPT -->
+}
+
+

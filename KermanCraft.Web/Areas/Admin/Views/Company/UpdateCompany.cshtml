@@ -1,0 +1,247 @@
+﻿@model KermanCraft.Application.ViewModels.Company.CompanyViewModel
+@{
+    ViewData["Title"] = "UpdateCompany";
+}
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم ویرایش اعضا و مراکز
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="UpdateCompany" asp-controller="Company" asp-area="Admin" enctype="multipart/form-data">
+            <div class="form-body">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="PeopleId" />
+                <input type="hidden" asp-for="CompanyId" />
+                <div class="form-group">
+                    <label asp-for="Type">نوع مجموعه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <select asp-for="Type">
+                            <option value="آموزشگاه">آموزشگاه</option>
+                            <option value="نگارخانه">نگارخانه</option>
+                            <option value="تولیدکننده">تولیدکننده</option>
+                            <option value="صادرکننده">صادرکننده</option>
+                            <option value="واردکننده">واردکننده</option>
+                        </select>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Name">نام مجموعه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="نام" asp-for="Name">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <!--<div class="form-group">
+                    <label asp-for="Manager">نام و نام خانوادگی مدیرعامل</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="نام و نام خانوادگی مدیرعامل" asp-for="Manager">
+                    </div>--><!-- /.input-group -->
+                    <!--<span asp-validation-for="Manager" class="text-danger"></span>
+                </div>--><!-- /.form-group -->
+                <!--<div class="form-group">
+                    <label asp-for="OwnerPhoneNumber">شماره موبایل مدیرعامل</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="شماره موبایل مدیرعامل" asp-for="OwnerPhoneNumber">
+                    </div>--><!-- /.input-group -->
+                    <!--<span asp-validation-for="OwnerPhoneNumber" class="text-danger"></span>
+                </div>--><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="RegistrationNum">کدثبت</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-tag"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="کدثبت" asp-for="RegistrationNum">
+
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="RegistrationNum" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Email">ایمیل</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-envelope"></i>
+                        </span>
+                        <input type="email" asp-for="Email" class="form-control ltr text-right" placeholder="ایمیل">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Tel">تلفن</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-bell"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="تلفن" asp-for="Tel">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Tel" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Instagram">اینستاگرام</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-instagram"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="اینستاگرام" asp-for="Instagram">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Instagram" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Telegram">تلگرام</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-instagram"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="تلگرام" asp-for="Telegram">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Telegram" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="LinkedIn">لینکدین</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-instagram"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="لینکدین" asp-for="LinkedIn">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="LinkedIn" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="WhatsApp">واتزاپ</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-instagram"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="واتزاپ" asp-for="WhatsApp">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="WhatsApp" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="StartDate">تاریخ ثبت</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="text" class="has-persian-datepicker form-control" asp-for="StartDate">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+
+                <div class="form-group">
+                    <label asp-for="Address">آدرس</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control" asp-for="Address">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Description">توضیحات</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <textarea type="text" class="form-control" asp-for="Description"></textarea>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Status">
+                        فعال
+                        <input type="checkbox" class=" form-control" asp-for="Status">
+                    </label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+
+                <div class="form-group">
+                    <label>عکس لوگو</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-camera"></i>
+                        </span>
+                        <img src="~/images/Company/@Model.ImageUrl" alt="عکس لوگو" id="blah" class="img-thumbnail" style="width: 200px; height: 200px;">
+                    </div><!-- /.input-group -->
+                </div><!-- /.form-group -->
+                <div class="form-group relative">
+                    <input type="file" class="form-control" name="files" id="imgInp" asp-for="ImageUrl">
+                    <label>آپلود فایل</label>
+                    <div class="input-group round">
+                        <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                        <span class="input-group-btn input-group-sm">
+                            <button type="button" class="btn btn-info">
+                                <i class="icon-picture"></i>
+                                آپلود عکس لوگو
+                                <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
+                            </button>
+                        </span>
+                    </div><!-- /.input-group -->
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-curve">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Admin" asp-controller="Company" asp-action="CompanyList" class="btn btn-warning btn-curve">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+                        {
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="/assets/plugins/persian-date/persian-date.min.js"></script>
+    <script src="/assets/plugins/persian-datepicker/js/persian-datepicker.min.js"></script>
+    <script src="/assets/js/pages/calendar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/js/PreviewImage.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}
+

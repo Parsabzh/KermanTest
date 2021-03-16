@@ -1,0 +1,13 @@
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\KermanCraft.Domain.deps.json
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\KermanCraft.Domain.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\KermanCraft.Domain.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\KermanCraft.Infrastructure.Localize.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\KermanCraft.Infrastructure.Localize.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\bin\Release\netcoreapp3.1\fa\KermanCraft.Infrastructure.Localize.resources.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.csprojAssemblyReference.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.AssemblyInfoInputs.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.AssemblyInfo.cs
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.csproj.CoreCompileInputs.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.csproj.CopyComplete
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Domain\obj\Release\netcoreapp3.1\KermanCraft.Domain.pdb

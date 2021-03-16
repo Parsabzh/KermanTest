@@ -1,0 +1,72 @@
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.deps.json
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.json
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.dev.json
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.dll
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.dll
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.pdb
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.pdb
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\fa\KermanCraft.Infrastructure.Localize.resources.dll
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CopyComplete
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Downloads\KermanCraft-main\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.genruntimeconfig.cache
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.deps.json
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.json
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.dev.json
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.dll
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.dll
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.pdb
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.pdb
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\fa\KermanCraft.Infrastructure.Localize.resources.dll
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CopyComplete
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Documents\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.genruntimeconfig.cache
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.deps.json
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.json
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.dev.json
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.dll
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.dll
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.pdb
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.pdb
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\fa\KermanCraft.Infrastructure.Localize.resources.dll
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CopyComplete
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\Users\E-Pouya 09379343114\Documents\Kerman2\kermancraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.genruntimeconfig.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.deps.json
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.json
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.runtimeconfig.dev.json
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Domain.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Localize.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\bin\Debug\netcoreapp3.1\fa\KermanCraft.Infrastructure.Localize.resources.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csprojAssemblyReference.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.AssemblyInfo.cs
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.csproj.CopyComplete
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.dll
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.pdb
+C:\KermanCraft\KermanCraft\KermanCraft.Infrastructure.Data\obj\Debug\netcoreapp3.1\KermanCraft.Infrastructure.Data.genruntimeconfig.cache

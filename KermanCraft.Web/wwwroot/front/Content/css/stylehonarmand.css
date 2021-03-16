@@ -1,0 +1,220 @@
+@media screen and (max-width:768px) {
+    .col-sm-7 {
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+    }
+
+    .myrow {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .change-order1 {
+        order: 2;
+    }
+
+    .change-order {
+        order: 1;
+    }
+
+    .inputsmall {
+        margin-bottom: 15px;
+    }
+}
+
+
+h3 {
+    font-family: 'Lora', serif !important;
+    color: #fffff;
+}
+
+.bg1 {
+    color: #08760c;
+    !important
+}
+
+.profilePic {
+    width: 150px;
+    height: 150px;
+}
+
+.jumbotron {
+    margin-top: 50px;
+    background-color: #08760c;
+    height: 370px !important;
+    margin-bottom: 0px !important;
+}
+
+.students-jumbotron {
+    margin-top: 50px;
+    background-color: #08760c;
+    height: 290px !important;
+    margin-bottom: 0px !important;
+}
+
+    .students-jumbotron h1 {
+        color: white;
+    }
+
+.course-jumbotron {
+    height: 480px !important;
+}
+
+.jumbotron p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.navbar {
+    background-color: #08760c;
+    border: 0;
+    font-size: 16px !important;
+    line-height: 1.42857143 !important;
+    border-radius: 0;
+    /* border-bottom: 0.5px solid rgba(255,255,255,0.3); */
+}
+
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+    }
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #08760c !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.thumbnail {
+    border: none;
+    border-radius: 0px;
+    padding: 0 0 20px 0;
+}
+
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+
+.top-padding {
+    padding-top: 30px;
+}
+
+.reg-top-padding {
+    padding-top: 50px;
+}
+
+.bg-gray {
+    background-color: #f6f6f6;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-feedback {
+    background-color: #a9a9a9;
+}
+h5 {
+    font-family: 'Open Sans' !important;
+    text-align: center;
+    font-size: 17px !important;
+    color: black !important;
+    font-weight: 400;
+}
+.fa {
+    display: inline-block;
+    color: black !important;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.form-control {
+    display: block;
+   
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: right !important;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.container-fluid {
+    width: 100%;
+    border-radius: 20px !important;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.slider-image {
+    width: 100%;
+    height: 540px !important;
+}
+
+.text-justifier {
+    text-align: justify;
+}
+
+.btn-default {
+    float: right !important;
+    background-color: white !important;
+    color: #915a5a !important;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+    .btn-default:hover {
+        background-color: rgb(254 226 226 / 89%) !important;
+        color: white !important;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+.col-sm-7 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.textheight {
+    height: 540px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.feedback-color {
+    color: white;
+}
+
+.col-sm-12 {
+    padding-top: 15px;
+}
+
+.font-default {
+    color: #08760c;
+}
+
+.students-thumbnail img {
+    width: 120px;
+    padding-top: 15px;
+}
+.ss{
+
+    padding:15px;
+    margin-top:20px;
+}

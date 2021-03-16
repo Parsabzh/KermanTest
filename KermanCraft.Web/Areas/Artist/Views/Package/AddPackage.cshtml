@@ -1,0 +1,129 @@
+﻿@model KermanCraft.Application.ViewModels.Package.PackageViewModel
+@{
+    ViewData["Title"] = "AddPackage";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم ثبت پکیج
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="AddPackage" asp-controller="Package" asp-area="Artist">
+            <div class="form-body">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Subject">عنوان </label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="عنوان" asp-for="Subject">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Description">توضیحات</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-paragraph"></i>
+                        </span>
+                        <textarea asp-for="Description" id="summernote"></textarea>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div> @*/.form-group*@
+                <div class="form-group">
+                    <label asp-for="Period">مدت به ماه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="مدت به ماه" asp-for="Period">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Period" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="ProductNum">تعداد محصول مجاز</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="تعداد محصول مجاز" asp-for="ProductNum">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="ProductNum" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Score">میزان امتیاز</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="میزان امتیاز" asp-for="Score">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Score" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Price">قیمت</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="قیمت" asp-for="Price">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-curve">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Artist" asp-controller="Package" asp-action="PackageList" class="btn btn-warning btn-curve">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+                        {
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'متن خود را بنویسید ...',
+                tabsize: 2,
+                height: 100,
+                rtl: true
+            });
+        });
+    </script>
+
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+
+
+

@@ -1,0 +1,57 @@
+﻿@model System.Collections.Generic.IEnumerable<KermanCraft.Application.ViewModels.Course.CourseViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span>دوره های آموزشی</span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+       
+        @if (!Model.Any())
+        {
+            <div>موردی وجود ندارد!</div>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                    <div class="card">
+                        <img class="imgneg" src="~/images/Course/@item.ImageUrl" alt="CourseImage"/>
+                        <br />
+                        <h5>@item.Subject</h5>
+                        <hr />
+
+                        <p style="color:black">
+                            @item.Text.Substring(0,5)
+                        </p>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <a asp-controller="Home" asp-action="GetCourse" asp-route-courseId="@item.CourseId" class="btnkhabar">جزییات </a>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+<br />
+<br />
+<br />
+<br />

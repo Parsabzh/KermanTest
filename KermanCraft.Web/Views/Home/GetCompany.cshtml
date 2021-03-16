@@ -1,0 +1,78 @@
+﻿@using KermanCraft.Application.Interfaces
+@model KermanCraft.Application.ViewModels.Company.CompanyViewModel
+@{
+    ViewData["Title"] = "GetCompany";
+}
+@inject IArtistService ArtistService
+<link rel="stylesheet" href="~/front/Content/css/namaslide.css">
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<link rel="stylesheet" href="~/front/Content/css/slider.css">
+<link rel="stylesheet" href="~/front/Content/css/slider - Copy.css">
+<link rel="stylesheet" href="~/front/Content/css/stylehonarmand.css">
+<link rel="stylesheet" href="~/front/Content/css/owl.carosol.css" />
+
+<h2 class="h8d">نام شرکت</h2>
+<div class="container ss1">
+
+    <div class="row">
+
+        <div class="col-sm-5">
+            <h2 class="h8d">مشخصات شرکت</h2>
+            <div class="l54">
+                <br />
+
+                <img class=" dff" src="~/images/Company/@Model.ImageUrl" alt="CompanyImage"/>
+                <br />
+                <p class="df">نام شرکت:<span class="df1">@Model.Name</span><p />
+                @*<p class="df">برند:<span class="df1">@Model.</span><p />*@
+                <p class="df">آدرس:<span class="df1">@Model.Address</span><p />
+                <p class="df">تلفن :<span class="df1">@Model.Tel</span><p />
+                <p class="df">
+                    رایانامه:<span class="df1">
+                    <a>@{ var email = $"https:\\{Model.Email}";}
+                        @email</a>
+                    </span>
+                <p />
+                <p class="df">اینستاگرام:<span class="df1">@Model.Instagram</span><p />
+                <p class="df">تلگرام:<span class="df1">@Model.Telegram</span><p />
+                <p class="df">لینکدین:<span class="df1">@Model.LinkedIn</span><p />
+                <p class="df">واتزاپ:<span class="df1">@Model.WhatsApp</span><p />
+                <p class="df">اعضا:<span class="df1">...</span><p />
+                <br />
+
+
+
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+
+        <div class="col-sm-5">
+            <h2 class="h8d">مشخصات مدیرعامل</h2>
+            <div class="l54">
+                <br />
+                @{
+                  var user= await  ArtistService.GetArtistUserById(Model.PeopleId);
+                }
+                <p class="df">نام :<span class="df1">@user.Entity.Name</span><p />
+                <p class="df">نام خانوادگی:<span class="df1">@user.Entity.Family</span><p />
+                <p class="df">تحصیلات:<span class="df1">@user.Entity.Education</span><p />
+                <p class="df">حوزه کار:<span class="df1">@user.Entity.Job</span><p />
+                @*<p class="df">  سوابق:<span class="df1">شرکت...</span><p />*@
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br />
+<br />
+<br />
+
+@section scripts
+{
+    <script src="~/front/Script/jquery-3.5.1.js"></script>
+    <script src="~/front/Script/owl.curosol.js"></script>
+
+}
+

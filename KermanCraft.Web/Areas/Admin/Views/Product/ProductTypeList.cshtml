@@ -1,0 +1,134 @@
+﻿@model IEnumerable<KermanCraft.Application.ViewModels.Product.ProductTypeViewModel>
+@{
+    ViewData["Title"] = "ProductTypeList";
+}
+@*@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}*@
+<div class="portlet-heading">
+    <div class="portlet-title">
+        <h3 class="title">
+            <i class="icon-user"></i>
+            لیست نوع محصولات
+        </h3>
+    </div><!-- /.portlet-title -->
+</div><!-- /.portlet-heading -->
+<div class="table-responsive">
+    <div class="col-md-4 col-12 m-b-20">
+        <a class="btn btn-success btn-curve" asp-area="Admin" asp-action="AddProductType" asp-controller="Product">
+            <i class="icon-plus"></i>
+            افزودن
+        </a>
+    </div>
+    <table class="table table-bordered table-hover table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>عنوان</th>
+              
+                <td>عملیات</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td>موردی یافت نشد.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.Name
+                        </td>
+                    
+                        <td>
+                            <button class="btn btn-danger btn-curve select-link" data-id="@item.ProductTypeId" type="button">حذف</button>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="/assets/plugins/data-table/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/pages/datatable.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script>
+        $(".select-link").click(function() {
+            var id = $(this).data("id");
+            swal({
+                title: 'آیا اطمینان دارید؟',
+                text: "این عملیات برگشت پذیر نیست...",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#f44336',
+                cancelButtonColor: '#777',
+                confirmButtonText: 'بله، حذف شود. ',
+                cancelButtonText: 'انصراف'
+            }).then(function() {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DeleteProductType", "Product", new {Area = "Admin"})",
+                        data: { id: id },
+                        dataType: "text",
+                        @*headers: {
+                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                        },*@
+                        success: function() {
+
+                            swal(
+                                'انتخاب شما حذف کردن بود.',
+                                'فایل شما با موفقیت حذف گدید.',
+                                'success'
+                            ).catch(swal.noop).then(function() {
+                                location.reload();
+                            });
+
+
+                        },
+                        error: function() {
+
+                            swal(
+                                'مشکلی در حذف پیش آمده است،یا پشتیبانی تماس بگیرید.',
+                                'فایل شما حذف نگردید',
+                                'error').catch(swal.noop).then(function () {
+                                    location.reload();
+                                });
+                        }
+                    });
+                },
+                function(dismiss) {
+                    if (dismiss === 'cancel') {
+                        swal(
+                            'لغو گردید',
+                            'فایل شما همچنان وجود دارد.',
+                            'error'
+                        ).catch(swal.noop);;
+                    }
+                }).catch(swal.noop);
+        });
+    </script>
+
+
+    <!-- END PAGE JAVASCRIPT -->
+}
+
+
+
+

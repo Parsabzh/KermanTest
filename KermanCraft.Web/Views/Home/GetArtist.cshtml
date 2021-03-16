@@ -1,0 +1,140 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KermanCraft.Domain.Models.People
+@model KermanCraft.Application.ViewModels.Artist.ArtistViewModel
+
+@{
+    ViewData["Title"] = "GetArtist";
+
+}
+
+<link rel="stylesheet" href="~/front/Content/css/namaslide.css">
+<link rel="stylesheet" href="~/front/Content/css/stylehonarmand.css">
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css">
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-sm-2"> </div>
+        <div class="col-sm-4 mn">
+            <div>
+
+                <br />
+                <p class="phonar">نام و نام خانوادگی:<span class="df1">@Model.Name @Model.Family</span></p>
+                <p class="phonar">نام برند:<span class="df1">@Model.Brand</span></p>
+                <p class="phonar">حوزه کاری:<span class="df1">@Model.Job</span></p>
+                <p class="phonar">اینستاگرام:<span class="df1">@Model.Instagram</span></p>
+                <p class="phonar">لینکدین:<span class="df1">@Model.LinkedIn</span></p>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+            <a href="#">   <img class="imghonar" src="~/images/ArtistUser/@Model.ImageUrl" /></a>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <h4 class="om">محصولات :</h4>
+    <div class="container mt-5">
+
+
+        <br />
+        <br />
+        <div class="row">
+            @if (Model.ProductViewModels.Any())
+            {
+                @foreach (var item in Model.ProductViewModels)
+                {
+                    <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                        <div class="card">
+                            <img class="imgneg" src="~/images/Product/@item.ImageViewModels[0].ImageUrl" alt="ProductImage" />
+                            <br />
+                            <h5 class="h5t">@item.ProductName</h5>
+                            <br />
+
+                            <p style="color: darkred">
+                                @item.Price
+                            </p>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col">
+                                    <a asp-controller="Home" asp-action="GetProduct" asp-route-productId="@item.ProductId"></a><button class="btnkhabar">جزییات </button>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <br />
+
+
+        <h4 class="om">گالری :</h4>
+        <br />
+        <div class="row">
+            @if (Model.Gallery.Any())
+            {
+                @foreach (var item in Model.Gallery)
+                {
+                    <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                        <div class="card">
+                            <img class="imgneg" src="~/images/Product/@item.ImageViewModels[0].ImageUrl" alt="ProductImage" />
+                            <br />
+                            <h5 class="h5t">@item.ProductName</h5>
+                            <br />
+
+                            <p style="color: darkred">
+                                @item.Price
+                            </p>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col">
+                                    <a asp-controller="Home" asp-action="GetProduct" asp-route-productId="@item.ProductId"></a><button class="btnkhabar">جزییات </button>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+    <br />
+    <br />
+
+</div>
+<br />
+<div class="container">
+
+    <h4 class="om">دستاورد ها :</h4>
+    <div class=" container slider owl-carousel">
+
+
+        <div class="card">
+            <br />
+            <h5 style="color:dimgrey">دستاورد</h5>
+            <p class="ppro">
+                @Html.Raw(Model.Achievement)
+            </p>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+
+                </div>
+
+                <div class="col"></div>
+                <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,188 @@
+﻿@model KermanCraft.Application.ViewModels.Product.AddUpdateProductViewModel
+@{
+    ViewData["Title"] = "UpdateProduct";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم ویرایش محصول
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="UpdateProduct" asp-controller="Product" asp-area="Admin" enctype="multipart/form-data">
+            <div class="form-body">
+                <input type="hidden" asp-for="ProductId"/>
+                <input type="hidden" asp-for="Code"/>
+                <input type="hidden" asp-for="PeopleId" />
+                <div asp-validation-summary="All" class="text-danger"></div>
+            
+                <div class="form-group">
+                    <label asp-for="ProductName">نام کالا</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-box"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="نام" asp-for="ProductName">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Price">قیمت</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-money-check"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="قیمت" asp-for="Price">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Material">جنس</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-money-check"></i>
+                        </span>
+                        <input type="number" class="form-control" placeholder="جنس" asp-for="Material">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Material" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Size">اندازه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-text-height"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="سایز" asp-for="Size">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Weight">وزن</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-balance-scale"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="وزن" asp-for="Weight">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Type">نوع</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-cog"></i>
+                        </span>
+                        <select asp-for="Type" class="form-control">
+                            @foreach (var item in Model.ProductTypeViewModels)
+                            {
+                                <option value="@item.Name">@item.Name</option>
+                            }
+                        </select>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Description">توضیحات</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-th-list"></i>
+                        </span>
+                        <textarea asp-for="Description" class="form-control" placeholder="توضیحات"></textarea>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="IsForSale">
+                        برای فروش
+                        <input type="checkbox" class="form-control icheckbox_square-grey " asp-for="IsForSale">
+                    </label>
+                    <span asp-validation-for="IsForSale" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Status">
+                        فعال
+                        <input type="checkbox" class="form-control icheckbox_square-grey " asp-for="Status">
+                    </label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                @if (!Model.ImageViewModels.Any())
+                {
+                    <div>عکسی موجود نمی باشد!</div>
+                }
+                else
+                {
+
+                    @foreach (var item in Model.ImageViewModels)
+                    {
+
+                        <div class="form-group row">
+                            <label>عکس لوگو</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="icon-camera"></i>
+                                </span>
+                                <img src="/images/Window/@item.ImageUrl" alt="عکس محصول" id="blah" class="img-thumbnail" style="width: 200px; height: 300px;">
+                                <a class="btn btn-danger btn-curve text-white" asp-area="Admin" asp-controller="Product" asp-action="DeleteImage" asp-route-imgId="@item.ImageId">حذف</a>
+                            </div><!-- /.input-group -->
+                        </div>
+                        <!-- /.form-group -->
+                    }
+                }
+                <div class="form-group relative">
+                    <input type="file" class="form-control" name="files" id="imgInp">
+                    <label>آپلود فایل</label>
+                    <div class="input-group round">
+                        <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                        <span class="input-group-btn input-group-sm">
+                            <button type="button" class="btn btn-info">
+                                <i class="icon-picture"></i>
+                                آپلود عکس محصول
+                                <div class="paper-ripple">
+                                    <div class="paper-ripple__background"></div>
+                                    <div class="paper-ripple__waves"></div></div>
+                            </button>
+                        </span>
+                    </div><!-- /.input-group -->
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-round">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Admin" asp-controller="Product" asp-action="ProductList" asp-route-id="@Model.PeopleId" class="btn btn-warning btn-round">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+{
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="~/js/PreviewImage.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+

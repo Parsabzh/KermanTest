@@ -1,0 +1,68 @@
+﻿@model KermanCraft.Application.ViewModels.Admin.AdminIndex
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-darkblue shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.ArtistCount"></div>
+                    <div class="h3">هنرمندان</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="icon-user"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-blue shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.CustomerCount"></div>
+                    <div class="h3">مشتریان</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-orange shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.CompanyCount"></div>
+                    <div class="h3">شرکت</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-receipt"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-6">
+        <div class="stat-box bg-red shadow">
+            <a href="#">
+                <div class="stat">
+                    <div class="counter-down" data-value="@Model.ProductCount"></div>
+                    <div class="h3">محصول</div>
+                </div><!-- /.stat -->
+                <div class="visual">
+                    <i class="fas fa-coffee"></i>
+                </div><!-- /.visual -->
+            </a>
+        </div><!-- /.stat-box -->
+    </div><!-- /.col-lg-3 -->
+</div><!-- /.row -->
+
+@section scripts
+{
+    <script src="/assets/plugins/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="/assets/plugins/jquery-incremental-counter/jquery.incremental-counter.min.js"></script>
+    <script src="/assets/plugins/ammap3/ammap/ammap.js"></script>
+    <script src="/assets/plugins/ammap3/ammap/maps/js/iranHighFa.js"></script>
+    <script src="/assets/js/pages/dashboard2.js"></script>
+}

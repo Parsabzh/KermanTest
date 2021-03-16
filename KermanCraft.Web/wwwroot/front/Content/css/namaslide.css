@@ -1,0 +1,93 @@
+
+
+
+.slider {
+    max-width: 1100px;
+    display: flex;
+}
+
+    .slider .card {
+        flex: 1;
+        margin: 0 10px;
+        background: #fff;
+    }
+
+        .slider .card .img {
+            height: 200px;
+            width: 100%;
+        }
+
+            .slider .card .img img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        .slider .card .content {
+            padding: 10px 20px;
+        }
+
+.card .content .title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card .content .sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e74c3c;
+    line-height: 20px;
+}
+
+.card .content p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+    .card .content .btn button {
+        background: #e74c3c;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+        .card .content .btn button:hover {
+            transform: scale(0.9);
+        }
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px !important;
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0))) !important;
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}

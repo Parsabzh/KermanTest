@@ -1,0 +1,15 @@
+﻿.m{
+    text-align:right !important;
+    direction:rtl !important;
+    border:1px solid black;
+
+}
+.p{
+    padding:80px;
+    color:darkgreen !important;
+    
+}
+.l{ 
+    padding:80px;
+    color:darkred !important;
+}

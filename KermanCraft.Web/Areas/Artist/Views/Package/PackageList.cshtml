@@ -1,0 +1,123 @@
+﻿@using System.Net
+@model IEnumerable<KermanCraft.Application.ViewModels.Package.PackageViewModel>
+@{ ViewData["Title"] = "PackageList"; }
+@*@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{ public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    } }*@
+<div class="portlet-heading">
+    <div class="portlet-title">
+        <h3 class="title">
+            <i class="icon-user"></i>
+            لیست پکیج ها
+        </h3>
+    </div><!-- /.portlet-title -->
+</div><!-- /.portlet-heading -->
+
+@if (!Model.Any())
+{
+<div> پکیجی موجود نیست!</div> }
+else
+{
+foreach (var packageViewModel in Model)
+{
+<div class="col-lg-6 ">
+    <div class="portlet box border shadow round align-self-center">
+        <div class="portlet-heading">
+            <div class="portlet-title">
+                <h3 class="title">بسته
+
+                    @packageViewModel.Subject
+                </h3>
+            </div>
+        </div>
+        <div class="portlet-body  ">
+            <div>@Html.Raw(@WebUtility.HtmlDecode(@packageViewModel.Description))</div>
+            <hr />
+            <div>مدت زمان : @packageViewModel.Period ماه </div>
+            <hr />
+            <div>امتیاز : @packageViewModel.Score  </div>
+            <hr />
+            <div>مقدار محصول مجاز : @packageViewModel.ProductNum عدد</div>
+            <hr />
+            <div>قیمت : @packageViewModel.Price.ToString("N0") تومان  </div>
+            <br/>
+            <div><a asp-action="AddPeopleToPackage" asp-controller="Package" asp-area="Artist" asp-route-packageId="@packageViewModel.PackageId"  class="btn btn-curve btn-info" >خرید</a></div>
+        </div>
+    </div>
+</div>}
+
+}
+
+@section scripts
+{
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="/assets/plugins/data-table/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/pages/datatable.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script>
+        $(".select-link").click(function() {
+            var id = $(this).data("id");
+            swal({
+                title: 'آیا اطمینان دارید؟',
+                text: "این عملیات برگشت پذیر نیست...",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#f44336',
+                cancelButtonColor: '#777',
+                confirmButtonText: 'بله، حذف شود. ',
+                cancelButtonText: 'انصراف'
+            }).then(function() {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DeletePackage", "Package", new {Area = "Artist"})",
+                        data: { id: id },
+                        dataType: "text",
+                        @*headers: {
+                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                        },*@
+                        success: function() {
+
+                            swal(
+                                'انتخاب شما حذف کردن بود.',
+                                'فایل شما با موفقیت حذف گدید.',
+                                'success'
+                            ).catch(swal.noop).then(function() {
+                                location.reload();
+                            });
+
+
+                        },
+                        error: function() {
+
+                            swal(
+                                'مشکلی در حذف پیش آمده است،یا پشتیبانی تماس بگیرید.',
+                                'فایل شما حذف نگردید',
+                                'error').catch(swal.noop).then(function () {
+                                    location.reload();
+                                });
+                        }
+                    });
+                },
+                function(dismiss) {
+                    if (dismiss === 'cancel') {
+                        swal(
+                            'لغو گردید',
+                            'فایل شما همچنان وجود دارد.',
+                            'error'
+                        ).catch(swal.noop);;
+                    }
+                }).catch(swal.noop);
+        });
+    </script>
+
+
+    <!-- END PAGE JAVASCRIPT -->
+}
+
+
+

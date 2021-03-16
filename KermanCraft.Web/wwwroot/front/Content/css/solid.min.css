@@ -1,0 +1,14 @@
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url('../Fonts/fontawesome-webfont (2).woff2');
+    src: url('../Fonts/fa-solid-900 .woff2') format("embedded-opentype"),url('../Fonts/fa-solid-900 .woff2') format("woff2"),url(../Fonts/fontawesome-webfont.woff2) format("woff2"),url(../Fonts/FontAwesome.ttf) format("truetype"),url(../webfonts/fa-solid-900.svg#fontawesome) format("svg")
+}
+
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900
+}

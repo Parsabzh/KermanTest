@@ -1,0 +1,132 @@
+﻿@model KermanCraft.Application.ViewModels.Article.ArticleViewModel
+@{
+    ViewData["Title"] = "UpdateArticle";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم  ویرایش مقاله
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="UpdateArticle" asp-controller="WindowNews" asp-area="Artist" enctype="multipart/form-data">
+            <div class="form-body">
+                <input type="hidden" asp-for="ArticleId" />
+                <input type="hidden" asp-for="PeopleId" />
+                
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Subject">موضوع</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-tablet"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="موضوع" asp-for="Subject">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Text">متن</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-paragraph"></i>
+                        </span>
+                        <textarea asp-for="Text" id="summernote"></textarea>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div> @*/.form-group*@
+
+                @if (!Model.ImageViewModels.Any())
+                {
+                    <div>عکسی موجود نمی باشد!</div>
+                }
+                else
+                {
+
+                    @foreach (var item in Model.ImageViewModels)
+                    {
+
+                        <div class="form-group row">
+                            <label>عکس لوگو</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="icon-camera"></i>
+                                </span>
+                                <img src="/images/Window/@item.ImageUrl" alt="عکس خبر" id="blah" class="img-thumbnail" style="width: 200px; height: 300px;">
+                                <a class="btn btn-danger btn-curve text-white" asp-area="Artist" asp-controller="WindowNews" asp-action="DeleteImage" asp-route-imgId="@item.ImageId">حذف</a>
+                            </div><!-- /.input-group -->
+                        </div>
+                        <!-- /.form-group -->
+                    }
+                }
+
+                <div class="form-group relative">
+                    <input type="file" class="form-control" name="files" id="imgInp">
+                    <label>آپلود فایل</label>
+                    <div class="input-group round">
+                        <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                        <span class="input-group-btn input-group-sm">
+                            <button type="button" class="btn btn-info">
+                                <i class="icon-picture"></i>
+                                آپلود عکس خبر
+                                <div class="paper-ripple">
+                                    <div class="paper-ripple__background"></div>
+                                    <div class="paper-ripple__waves"></div>
+                                </div>
+                            </button>
+                        </span>
+                    </div><!-- /.input-group -->
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-round">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Artist" asp-controller="WindowNews" asp-action="ArticleList" class="btn btn-warning btn-round">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+{
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'متن خود را بنویسید ...',
+                tabsize: 2,
+                height: 100,
+                rtl:true
+            });
+        });
+    </script>
+    <script src="~/js/PreviewImage.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+

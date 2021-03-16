@@ -1,0 +1,53 @@
+﻿@model IEnumerable<KermanCraft.Application.ViewModels.Company.CompanyViewModel>
+@{
+    ViewData["Title"] = "GetCompanyByType";
+}
+
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span> اعضا و مراکز </span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+     @if (!Model.Any())
+     {
+         <div>موردی وجود ندارد!</div>
+     }
+     else
+     {
+         foreach (var item in Model)
+         {
+             <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                 <div class="card">
+                     <img class="imgneg" src="~/images/Company/@item.ImageUrl" alt="CompanyImage"/>
+                     <br />
+                     <h5>@item.Name</h5>
+                     <br />
+                     <hr />
+                     <br />
+                     <a class="textm">
+                         @item.Manager
+                     </a>
+                     <div class="row">
+                         <div class="col"></div>
+                         <div class="col">
+                             <button asp-action="GetCompany" asp-controller="Home" asp-route-companyId="@item.CompanyId" class="btnkhabar">صفحه شرکت</button>
+                         </div>
+                         <div class="col"></div>
+                     </div>
+                 </div>
+             </div>
+         }
+     }
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<br>
+<br>

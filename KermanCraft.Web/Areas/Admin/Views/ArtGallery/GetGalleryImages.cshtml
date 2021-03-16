@@ -1,0 +1,129 @@
+﻿@model KermanCraft.Application.ViewModels.Image.ImageListViewModel
+@{
+    ViewData["Title"] = "GetGalleryImages";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<div class="col-md-4 col-12 m-b-20">
+    <a class="btn btn-success btn-curve" asp-area="Admin" asp-action="AddGalleryImage" asp-route-galleryId="@Model.Id" asp-controller="ArtGallery">
+        <i class="icon-plus"></i>
+         افزودن محصول
+    </a>
+</div>
+<hr/>
+
+@if (!Model.ImageViewModels.Any())
+{
+    <div>موردی وجود ندارد.</div>
+}
+else
+{
+    @foreach (var item in Model.ImageViewModels)
+    {
+        <div class="col-lg-6">
+            <div class="portlet box border shadow round">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h3 class="title">
+                            <i class="icon-frame"></i>
+                            محتوای نمایشگاه
+                        </h3>
+                    </div>
+                    <div class="buttons-box">
+                        <a class="btn btn-sm btn-default btn-round btn-fullscreen" rel="tooltip" title="تمام صفحه" href="#">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                        <a class="btn btn-sm btn-default btn-round btn-collapse" rel="tooltip" title="کوچک کردن" href="#">
+                            <i class="icon-arrow-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+
+                    <div>
+                        <img class="img-thumbnail" src="/images/Gallery/@item.ImageUrl" alt="عکس محصول" />
+                    </div>
+                    <div>
+                      @Html.Raw(@item.Description)  
+                    </div>
+                    <hr />
+                    <button class="btn btn-danger btn-curve select-link" data-id="@item.ImageId" type="button">حذف</button>
+                </div>
+            </div>
+        </div>
+
+    }   
+}
+
+
+
+
+
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script>
+        $(".select-link").click(function() {
+            var id = $(this).data("id");
+            swal({
+                title: 'آیا اطمینان دارید؟',
+                text: "این عملیات برگشت پذیر نیست...",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#f44336',
+                cancelButtonColor: '#777',
+                confirmButtonText: 'بله، حذف شود. ',
+                cancelButtonText: 'انصراف'
+            }).then(function() {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DeleteImage", "ArtGallery", new {Area = "Admin"})",
+                        data: { id: id },
+                        dataType: "text",
+                        headers: {
+                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                        },
+                        success: function() {
+
+                            swal(
+                                'انتخاب شما حذف کردن بود.',
+                                'فایل شما با موفقیت حذف گدید.',
+                                'success'
+                            ).catch(swal.noop).then(function() {
+                                location.reload();
+                            });
+
+
+                        },
+                        error: function() {
+
+                            swal(
+                                'مشکلی در حذف پیش آمده است،یا پشتیبانی تماس بگیرید.',
+                                'فایل شما حذف نگردید',
+                                'error').catch(swal.noop).then(function() {
+                                location.reload();
+                            });
+                        }
+                    });
+                },
+                function(dismiss) {
+                    if (dismiss === 'cancel') {
+                        swal(
+                            'لغو گردید',
+                            'فایل شما همچنان وجود دارد.',
+                            'error'
+                        ).catch(swal.noop);;
+                    }
+                }).catch(swal.noop);
+        });
+    </script>
+}

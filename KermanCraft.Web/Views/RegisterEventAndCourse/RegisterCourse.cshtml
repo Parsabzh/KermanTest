@@ -1,0 +1,78 @@
+﻿@using KermanCraft.Application.Interfaces
+@model KermanCraft.Application.ViewModels.Course.CourseMemberViewModel
+@inject ICourseService CourseService
+@inject IArtistService Artist
+@{
+    ViewData["Title"] = "RegisterCourse";
+    var course = await CourseService.GetCourse(Model.CourseId);
+    var user = await Artist.GetArtistUserById(course.Entity.PeopleId);
+
+}
+    <link rel="stylesheet" href="~/front/Content/css/1.css" />
+<br />
+<div class="basket-page">
+    <div class="basket-preview">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="basket-items">
+
+                    <div class="item-row box-shadow">
+                        <div class="detail-lbl">
+                            <a class="title" href="#"> @course.Entity.Subject </a>
+                            <span class="teacher-name"> @user.Entity.Name  @user.Entity.Family</span>
+                        </div>
+                        <div class="price-lbl">
+
+
+                            <span class="off-price">
+                                -----
+
+                            </span>
+
+                            <span class="price">@course.Entity.Price تومان</span>
+                        </div>
+                        <a class="delete-row box-shadow" href="/front/Content/Acount/RemoveCourseFromOrder/4578"><i class="fa fa-close"></i></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="discount-code box-shadow">
+                    <div class="input-layer">
+                        <input type="text" id="DiscountCode" placeholder="کد تخفیف">
+                        <button class="button-st green">اعمال کد</button>
+                    </div>
+
+                </div>
+                <form method="post" action="/Acount/Basket" novalidate="novalidate">
+                    <div class="payment-way box-shadow">
+                        <span> انتخاب نحوه پرداخت </span>
+                        <div class="selected-ways">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="payment-gateway" class="order-payment" value="OnlinePayment" checked="checked" data-val="true" data-val-required="The PaymentType field is required." name="PaymentType">
+                                    <label for="payment-gateway"> درگاه پرداخت آنلاین </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="basket-factor box-shadow">
+
+                        <span class="main-payment">مبلغ کل : <i>400,000 تومان</i> </span>
+
+                        <span class="final-payment">مبلغ قابل پرداخت : <i>400,000 تومان</i></span>
+
+                        <button class="button-st green wide" type="submit" id="btn-sumbit"> ثبت و پرداخت نهایی </button>
+                    </div>
+                    <input name="__RequestVerificationToken" type="hidden">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br />
+
+

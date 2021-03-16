@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KermanCraft.Domain.Models.People
+@using System.Security.Claims
+@using KermanCraft.Application.Interfaces
+@using KermanCraft.Domain.Models.Share
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.EntityFrameworkCore.ChangeTracking.Internal
+@using Microsoft.Extensions.Localization
+@inject SignInManager<People> SignInManager
+@inject UserManager<People> UserManager
+@inject IArtistService ArtistService
+@inject ICustomerService CustomerService
+@inject IViewLocalizer Localizer
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <div class="r  row">
+        @if ((await ArtistService.ArtistIsInRole(User.FindFirstValue(ClaimTypes.Name))).Entity)
+        {
+            <a class="auser1" asp-action="Index" asp-controller="Index" asp asp-area="Artist" asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)"><span class="fa d fa-user"></span>سلام @((await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier))).Name) عزیز!</a> }
+        else if ((await CustomerService.CustomerIsInRole(User.FindFirstValue(ClaimTypes.Name))).Entity)
+        {
+            <a class="auser1" asp-action="Index" asp-controller="CustomerAccount"asp-area="Customer"  asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)"><span class="fa d fa-user"></span>سلام @((await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier))).Name) عزیز!</a> }
+        else
+        {
+            <a class="auser1" ><span class="fa d fa-user"></span>سلام @((await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier))).Name) عزیز!</a>}
+
+        <a class="auser1" asp-action="Logout" asp-controller="Home"><span class="btn btn-curve btn-accept"></span>خروج</a>
+
+    </div>
+}
+else
+{
+
+    <div class="col-sm-3">
+        <div class="dropdown">
+            <button class="dropbtn">@Localizer["Login"]</button>
+            <div class="dropdown-content">
+                <a asp-controller="Home" asp-action="Login">@Localizer["Login"]</a>
+                <a asp-controller="Home" asp-action="CustomerRegister">@Localizer["Register"]</a>
+                <a asp-controller="Home" asp-action="ArtistRegister">@Localizer["ArtistRegister"]</a>
+            </div>
+        </div>
+    </div>
+}
+

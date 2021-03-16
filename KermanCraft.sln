@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{7EA69FEE-A7B4-4217-804B-DBC3CFA4864D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{596F8243-43DD-47BE-8A28-5B89AACC9942}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Data", "Infrastructure.Data", "{37476460-5C0B-445D-870D-BA7CCDF10BA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.IoC", "Infrastructure.IoC", "{5AAC4CA8-A209-4F13-81FD-A57060670854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Localize", "Infrastructure.Localize", "{581B7B31-99B1-4DDA-A776-82D3B7397077}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8E8A9A62-A550-40D4-A2AB-0A5566AC78A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Application", "KermanCraft.Application\KermanCraft.Application.csproj", "{05D94EC1-281A-4865-8DC8-E0A202480A24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Domain", "KermanCraft.Domain\KermanCraft.Domain.csproj", "{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Infrastructure.Data", "KermanCraft.Infrastructure.Data\KermanCraft.Infrastructure.Data.csproj", "{60096E66-C61E-43A3-9626-85792F1F42E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Infrastructure.IoC", "KermanCraft.Infrastructure.IoC\KermanCraft.Infrastructure.IoC.csproj", "{5F06E7D4-FC24-4CBB-A26D-89760622817A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Infrastructure.Localize", "KermanCraft.Infrastructure.Localize\KermanCraft.Infrastructure.Localize.csproj", "{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KermanCraft.Web", "KermanCraft.Web\KermanCraft.Web.csproj", "{CD792507-DFD4-4AEB-BBCD-A8BF337DB017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05D94EC1-281A-4865-8DC8-E0A202480A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D94EC1-281A-4865-8DC8-E0A202480A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D94EC1-281A-4865-8DC8-E0A202480A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D94EC1-281A-4865-8DC8-E0A202480A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60096E66-C61E-43A3-9626-85792F1F42E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60096E66-C61E-43A3-9626-85792F1F42E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60096E66-C61E-43A3-9626-85792F1F42E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60096E66-C61E-43A3-9626-85792F1F42E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F06E7D4-FC24-4CBB-A26D-89760622817A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F06E7D4-FC24-4CBB-A26D-89760622817A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F06E7D4-FC24-4CBB-A26D-89760622817A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F06E7D4-FC24-4CBB-A26D-89760622817A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD792507-DFD4-4AEB-BBCD-A8BF337DB017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD792507-DFD4-4AEB-BBCD-A8BF337DB017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD792507-DFD4-4AEB-BBCD-A8BF337DB017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD792507-DFD4-4AEB-BBCD-A8BF337DB017}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05D94EC1-281A-4865-8DC8-E0A202480A24} = {7EA69FEE-A7B4-4217-804B-DBC3CFA4864D}
+		{78410BFB-CD0A-4499-BC8D-D6ECDE5CCB57} = {596F8243-43DD-47BE-8A28-5B89AACC9942}
+		{60096E66-C61E-43A3-9626-85792F1F42E6} = {37476460-5C0B-445D-870D-BA7CCDF10BA8}
+		{5F06E7D4-FC24-4CBB-A26D-89760622817A} = {5AAC4CA8-A209-4F13-81FD-A57060670854}
+		{B26A7B36-C8FD-448B-A1AB-C6A4A333DA21} = {581B7B31-99B1-4DDA-A776-82D3B7397077}
+		{CD792507-DFD4-4AEB-BBCD-A8BF337DB017} = {8E8A9A62-A550-40D4-A2AB-0A5566AC78A8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFD88624-CBAC-426E-A2D1-F58AF7CDE9A0}
+	EndGlobalSection
+EndGlobal

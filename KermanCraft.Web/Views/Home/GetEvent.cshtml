@@ -1,0 +1,326 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KermanCraft.Domain.Models.People
+@using KermanCraft.Application.Interfaces
+@using System.Security.Claims
+@model KermanCraft.Application.ViewModels.Event.EventViewModel
+@inject SignInManager<People> SignInManager
+@inject UserManager<People> UserManager
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/front/Content/css/namaslide.css">
+
+<script src="~/front/Script/owl.curosol.js"></script>
+<link rel="stylesheet" href="~/front/Content/css/css5/style.css">
+
+<!--Only for demo purpose - no need to add.-->
+<link rel="stylesheet" href="~/front/Content/css/css5/demo.css" />
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<link rel="stylesheet" href="~/front/Content/css/slider.css">
+<link rel="stylesheet" href="~/front/Content/css/slider - Copy.css">
+<link rel="stylesheet" href="~/front/Content/css/stylehonarmand.css">
+<link rel="stylesheet" href="~/front/Content/css/owl.carosol.css" />
+<link rel="stylesheet" href="~/front/Content/css/css2/bootstrap.min.css">
+<link rel="stylesheet" href="~/front/Content/css/slider.css">
+
+<br />
+<br />
+<br />
+<h3 class="ph1">@Model.Name</h3>
+<br />
+<div class="row">
+
+
+    <div class="col-sm-6">
+
+        <div class="container ">
+            <br />
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                    <div class="item active">
+
+                        <img src="~/images/Event/@Model.ImageUrl" alt="EvenImage" style="width:100%;">
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-sm-6">
+
+        <div class=" ds container">
+            <p class="pslide">
+                @Model.Description
+            </p>
+        </div>
+
+
+    </div>
+</div>
+<div class="row">
+    <br />
+    <div class="col">
+
+    </div>
+    @if (Model.IsSale)
+    {
+        if (SignInManager.IsSignedIn(User))
+        {
+            <div class="col">
+                <a asp-controller="RegisterEventAndCourse" asp-action="RegisterEvent" asp-route-eventId="@Model.EventId" type="button" class=" btn btn-success btn-curve">ثبت نام</a>
+            </div>
+        }
+        else
+        {
+            <div class="col">
+                <div> لطفا برای ثبت نام <a asp-controller="Home" asp-action="Login">وارد</a> شوید!</div>
+            </div>
+        }
+
+
+    }
+
+    <div class=" col">
+
+    </div>
+    <br />
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="c row">
+
+    <br />
+    <div class=" col">
+
+        <span class="ptime1 d">:تاریخ شروع</span>  <p class="ptime" href="#">@Model.Date</p>
+    </div>
+    <div class="col">
+
+    </div>
+    <div class=" col">
+        <span class="ptime1 d">:مدت</span>  <p class="ptime" href="#">@Model.Time</p>
+    </div>
+    <br />
+</div>
+
+
+<br />
+<br />
+<h2 class="h8d">نظرات کاربران</h2>
+<div class="container">
+    <br />
+    <br />
+
+    <div class="container-fluid bg-feedback feedback-color">
+        <div class="row myrow">
+            <br />
+
+
+            <div class="col-sm-4 text-center change-order1">
+                <br />
+                <div class="hidden-xs">
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <h5>نظرات خود را ارسال کنید</h5>
+                <br />
+                <h5>تلفن: +99108440159</h5>
+                <br />
+                <h5>narges.njfi.k95@gmail.com</h5>
+                <br />
+                <h5>ارتباط با ما</h5>
+
+
+            </div>
+            <br /><br />
+            @if (SignInManager.IsSignedIn(User))
+            {
+
+
+                <div class="col-sm-8 change-order">
+
+                    <div class="col-sm-11">
+                        <div class="col-sm-12 top-padding">
+                            <textarea class="form-control" rows="7" id="text" style="resize: none;">نظر خود را ثبت کنید...</textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-11">
+                        <div class="col-sm-12">
+                            <button id="btn-1" type="button" class="btn btn-default col-sm-2">ارسال</button>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-8 change-order">
+
+                    <div> لطفا برای ایجاد دیدگاه <a asp-controller="Home" asp-action="Login">وارد</a> شوید!</div>
+                </div>
+            }
+        </div>
+        <br />
+    </div>
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 text-right">
+                <a class="btn btn-danger1 mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-danger1 mb-3 " href="#carouselExampleIndicators1" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            @if (!Model.CommentViewModels.Any())
+            {
+                <div class="col-12">
+                    <div>نظری وجود ندارد!</div>
+                </div>
+            }
+            else
+            {
+                <div class="col-12">
+                    <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    @for (var i = 0; i < 4; i++)
+                                    {
+
+                                        <div class="col-sm-4  ">
+                                            <div class="bb">
+
+                                                <br />
+
+                                                <br />
+                                                <p>
+                                                    @{
+                                                        var user = await UserManager.FindByIdAsync(Model.CommentViewModels[i].PeopleId);
+
+                                                } @user.Name @user.Family
+                                            </p>
+                                            <p>@Html.Raw(Model.CommentViewModels[i].Description)</p>
+                                            <br />
+                                        </div>
+
+                                    </div>
+                                }
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    @{
+                                        var cm = Model.CommentViewModels.Skip(3);
+
+                                    }
+                                    @foreach (var item in cm)
+                                    {
+                                        <div class="col-sm-4  ">
+                                            <div class="bb">
+
+                                                <br />
+
+                                                <br />
+                                                <p>
+                                                    @{
+                                                        var user = await UserManager.FindByIdAsync(item.PeopleId);
+
+                                                } @user.Name @user.Family
+                                            </p>
+                                            <p>@Html.Raw(item.Description)</p>
+                                            <br />
+                                        </div>
+
+                                    </div>
+                                }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+
+@section scripts
+{
+
+    <script src="~/front/Script/owl.curosol.js"></script>
+    <script>
+
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $("#btn-1").click(function() {
+
+            var text = $('#text').val();
+            var type = 'event';
+            var typeId =@Model.EventId;
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("AddComment", "Home")",
+                data: { text: text,type:type,typeId:typeId },
+                dataType: "text"
+            }).then(
+                Swal.fire(
+                    {
+                        icon: 'success',
+                        text: 'پیام با موفقیت ارسال شد.',
+                        confirmButtonText: 'باشه'
+                    }
+                )
+            );
+        });
+
+    </script>
+}
+
+<br />
+<br />

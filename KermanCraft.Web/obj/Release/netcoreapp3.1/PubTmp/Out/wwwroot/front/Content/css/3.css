@@ -1,0 +1,750 @@
+﻿.left-tabs.sideways-tabs, .right-tabs.sideways-tabs {
+    margin-top: 5rem;
+    border: none;
+    position: relative;
+    margin-bottom: 0
+}
+.left-tabs .nav-link.active {
+    background-color: antiquewhite !important;
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6
+}
+
+.login-box {
+    width: 100%;
+    /* margin-top: 200px; */
+    margin-right: 38px;
+    /* height: 300px; */
+    background: #fefefe;
+    /* padding: 20px 20px; */
+    border-radius: 10px;
+    text-align: center;
+    /* border: 2px solid #d9b3b3; */
+    /* -webkit-box-shadow: 10px 10px 5px -4px rgb(0 0 0 / 75%); */
+    -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+     box-shadow: 10px 10px 5px -4px rgb(0 0 0 / 75%);
+}
+
+@media only screen and (max-width: 600px) {
+    .login-box {
+        width: 100%;
+        /* margin-top: 200px; */
+        margin-right: 38px;
+        /* height: 300px; */
+        background: #fefefe;
+        /* padding: 20px 20px; */
+        border-radius: 10px;
+        text-align: center;
+        /* border: 2px solid #d9b3b3; */
+        /* -webkit-box-shadow: 10px 10px 5px -4px rgb(0 0 0 / 75%); */
+        -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -4px rgb(0 0 0 / 75%);
+    }
+}
+
+.login-box h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #00BCD4;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    border-radius: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #975a5d;
+    font-size: 13px;
+    height: 40px;
+    text-align: center;
+    transition: 0.27s;
+}
+
+.vf {
+    margin-right: 35px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}
+
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+    width: 80%;
+    border-color: black;
+}
+
+.login-box input[type="submit"] {
+    width: 40%;
+    border: none;
+    outline: none;
+    background: black;
+    padding: 10px 0;
+    border-radius: 50px;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+    .login-box input[type="submit"]:hover {
+        background: #efece7;
+        color:black;
+        transition: .2s;
+    }
+
+    .login-box input[type="submit"]:focus {
+        transform: scaleX(1.1);
+    }
+
+.login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #00bcd4;
+}
+
+    .login-box a:hover {
+        color: #6FD653;
+    }
+.pslide1 {
+    color: darkred !important;
+    text-align: center !important;
+}
+
+.fg {
+    border-radius:10px;
+    border: 1px solid black !important;
+    padding: 5px !important;
+    background-color: white !important;
+}
+.left-tabs.nav-tabs, .right-tabs.nav-tabs, .left-tabs.sideways-tabs, .right-tabs.sideways-tabs {
+    height: 100%;
+    flex-direction: column
+}
+
+.left-tabs.nav-tabs {
+    border-right: 1px solid #dee2e6;
+    border-bottom: none
+}
+
+.left-tabs .nav-link {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: -1px;
+    text-align: left
+}
+
+    .left-tabs .nav-link:hover {
+        border-right: 1px solid transparent
+    }
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+        border-radius: 10px;
+        background-color: #bebdb9;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        background-color: cornsilk;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .right-tabs .nav-link:hover {
+        border-left: 1px solid transparent;
+        color: black;
+        background-color: #edcccc !important;
+        width: 100%;
+      
+    }
+}
+
+    .left-tabs .nav-link.active {
+        background-color:antiquewhite !important;
+        border-top: 1px solid #dee2e6;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid #dee2e6;
+        border-left: 1px solid #dee2e6
+    }
+
+    .right-tabs.nav-tabs {
+        border-left: 1px solid #dee2e6;
+        border-bottom: none
+    }
+
+    .right-tabs .nav-link {
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        margin-left: -1px;
+        text-align: right
+    }
+
+        .right-tabs .nav-link:hover {
+            border-left: 1px solid transparent
+        }
+
+        .right-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
+            border-left: 1px solid transparent
+        }
+
+    .left-tabs.sideways-tabs {
+        border-right: none;
+        left: -3.2rem
+    }
+
+    .sideways-tabs.left-tabs .nav-item {
+        transform: rotate(-90deg);
+        height: 1rem;
+        margin-bottom: calc(8rem - 1rem)
+    }
+
+    .sideways-tabs.left-tabs .nav-link {
+        width: 8rem;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: .25rem;
+        border-bottom: 1px solid #dee2e6
+    }
+
+        .sideways-tabs.left-tabs .nav-link:hover {
+            border-right: 1px solid #e9ecef
+        }
+
+        .sideways-tabs.left-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid #dee2e6
+        }
+
+    .right-tabs.sideways-tabs {
+        border-left: none;
+        right: 3.2rem
+    }
+
+    .sideways-tabs.right-tabs .nav-item {
+        transform: rotate(90deg);
+        height: 1rem;
+        margin-bottom: calc(8rem - 1rem)
+    }
+
+    .sideways-tabs.right-tabs .nav-link {
+        width: 8rem;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: .25rem;
+        border-bottom: 1px solid #dee2e6
+    }
+
+        .sideways-tabs.right-tabs .nav-link:hover {
+            border-left: 1px solid #e9ecef
+        }
+
+        .sideways-tabs.right-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid #dee2e6
+        }
+
+    @media (min-width: 26em) and (max-width: 48em) {
+        .left-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-bottom: 1px solid #dee2e6;
+            left: auto;
+            margin-top: auto
+        }
+
+        .left-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: .25rem;
+            margin-right: 0;
+            margin-bottom: -1px
+        }
+
+            .left-tabs .nav-link.nav-link:hover {
+                border-right-color: #dee2e6;
+                border-bottom-color: transparent
+            }
+
+            .left-tabs .nav-link.active {
+                border-top-color: #dee2e6;
+                border-right-color: #dee2e6;
+                border-bottom-color: transparent;
+                border-left-color: #dee2e6
+            }
+
+        .sideways-tabs.left-tabs .nav-item, .sideways-tabs.right-tabs .nav-item {
+            transform: none;
+            height: auto;
+            width: auto;
+            margin-bottom: 0
+        }
+
+        .right-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-top: 1px solid #dee2e6;
+            right: auto;
+            margin-top: auto
+        }
+
+        .sideways-tabs.right-tabs .nav-link, .right-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: .25rem;
+            border-bottom-left-radius: .25rem;
+            border-top-left-radius: 0;
+            margin-left: 0;
+            margin-top: -1px;
+            border-bottom-color: transparent
+        }
+
+            .right-tabs .nav-link:hover {
+                border-top-color: transparent;
+                border-left-color: #dee2e6;
+                border-bottom-color: #e9ecef
+            }
+
+            .sideways-tabs.right-tabs .nav-link.active, .right-tabs .nav-link.active {
+                border-top-color: transparent;
+                border-right-color: #dee2e6;
+                border-bottom-color: #dee2e6;
+                border-left-color: #dee2e6
+            }
+    }
+
+    @media (max-width: 26em) {
+        .left-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-bottom: 1px solid #dee2e6;
+            left: auto;
+            margin-top: auto;
+            padding-bottom: .25rem
+        }
+
+        .right-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-top: 1px solid #dee2e6;
+            right: auto;
+            margin-top: auto;
+            padding-top: .25rem
+        }
+
+        .sideways-tabs.left-tabs .nav-item, .sideways-tabs.right-tabs .nav-item {
+            transform: none;
+            height: auto;
+            width: auto;
+            margin-bottom: 0
+        }
+
+        .sideways-tabs.left-tabs .nav-link, .sideways-tabs.right-tabs .nav-link, .nav-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-radius: .25rem;
+            margin: .25rem;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent
+        }
+
+            .sideways-tabs.nav-tabs .nav-link:hover, .nav-tabs .nav-link:hover {
+                border: 1px solid #e9ecef;
+                border-top-color: #e9ecef;
+                border-right-color: #e9ecef;
+                border-bottom-color: #e9ecef;
+                border-left-color: #e9ecef
+            }
+
+        .sideways-tabs.nav-tabs .nav-link.active, .left-tabs .nav-link.active, .right-tabs .nav-link.active {
+            border-top-color: #dee2e6;
+            border-right-color: #dee2e6;
+            border-bottom-color: #dee2e6;
+            border-left-color: #dee2e6
+        }
+    }
+
+    .tab-content {
+        padding: 1rem
+    }
+    /*
+ * Responsive vertical tabs for Bootstrap 4
+ *
+ * Copyright (c) 2020 Tromgy (tromgy@yahoo.com)
+ *
+ * This stylesheet is what is fed into the node-scss compiler
+ *
+ * This software is supplied under the terms of the MIT License, a
+ * copy of which should be located in the distribution where this
+ * file was obtained (LICENSE.txt). A copy of the license may also be
+ * found online at https://opensource.org/licenses/MIT.
+ *
+ */
+    /*
+ * Responsive vertical tabs for Bootstrap 4
+ *
+ * Copyright (c) 2020 Tromgy (tromgy@yahoo.com)
+ *
+ * Custom variable definitions. You can change these variables
+ * to suit your needs without messing with the main stylesheet.
+ *
+ * This software is supplied under the terms of the MIT License, a
+ * copy of which should be located in the distribution where this
+ * file was obtained (LICENSE.txt). A copy of the license may also be
+ * found online at https://opensource.org/licenses/MIT.
+ *
+ */
+    /*
+ * Responsive vertical tabs for Bootstrap 4
+ *
+ * Main stylesheet. @import "custom-variables.sccss" before
+ * this file to compile into final CSS
+ *
+ * Copyright (c) 2020 Tromgy (tromgy@yahoo.com)
+ *
+ * This software is supplied under the terms of the MIT License, a
+ * copy of which should be located in the distribution where this
+ * file was obtained (LICENSE.txt). A copy of the license may also be
+ * found online at https://opensource.org/licenses/MIT.
+ *
+ */
+    .left-tabs.sideways-tabs, .right-tabs.sideways-tabs {
+        margin-top: 5rem;
+        border: none;
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .left-tabs.nav-tabs, .right-tabs.nav-tabs, .left-tabs.sideways-tabs, .right-tabs.sideways-tabs {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .left-tabs.nav-tabs {
+        border-right: 1px solid #dee2e6;
+        border-bottom: none;
+    }
+
+    .left-tabs .nav-link {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        margin-right: -1px;
+        text-align: left;
+    }
+
+        .left-tabs .nav-link:hover {
+            border-right: 1px solid transparent;
+        }
+
+        .left-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid #dee2e6;
+            border-left: 1px solid #dee2e6;
+        }
+
+    .right-tabs.nav-tabs {
+        border-left: 1px solid #dee2e6;
+        border-bottom: none;
+    }
+
+    .right-tabs .nav-link {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        /* margin-left: -1px; */
+        margin-right: -10px;
+        color: black;
+        text-align: center;
+    }
+
+        .right-tabs .nav-link:hover {
+            border-left: 1px solid transparent;
+            color: black;
+            background-color: #efece7 !important;
+        }
+
+     
+
+    .left-tabs.sideways-tabs {
+        border-right: none;
+        left: -3.2rem;
+    }
+
+    .sideways-tabs.left-tabs .nav-item {
+        transform: rotate(-90deg);
+        height: 1rem;
+        margin-bottom: calc(8rem - 1rem);
+    }
+
+    .sideways-tabs.left-tabs .nav-link {
+        width: 8rem;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0.25rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+        .sideways-tabs.left-tabs .nav-link:hover {
+            border-right: 1px solid #e9ecef;
+        }
+
+        .sideways-tabs.left-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid #dee2e6;
+        }
+
+    .right-tabs.sideways-tabs {
+        border-left: none;
+        right: 3.2rem;
+    }
+
+    .sideways-tabs.right-tabs .nav-item {
+        transform: rotate(90deg);
+        height: 1rem;
+        margin-bottom: calc(8rem - 1rem);
+    }
+
+    .sideways-tabs.right-tabs .nav-link {
+        width: 8rem;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0.25rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+        .sideways-tabs.right-tabs .nav-link:hover {
+            border-left: 1px solid #e9ecef;
+        }
+
+        .sideways-tabs.right-tabs .nav-link.active {
+            border-top: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid #dee2e6;
+        }
+
+    @media (min-width: 26em) and (max-width: 48em) {
+        .left-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-bottom: 1px solid #dee2e6;
+            left: auto;
+            margin-top: auto;
+        }
+
+        .left-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0.25rem;
+            margin-right: 0;
+            margin-bottom: -1px;
+        }
+
+            .left-tabs .nav-link.nav-link:hover {
+                border-right-color: #dee2e6;
+                border-bottom-color: transparent;
+            }
+
+            .left-tabs .nav-link.active {
+                border-top-color: #dee2e6;
+                border-right-color: #dee2e6;
+                border-bottom-color: transparent;
+                border-left-color: #dee2e6;
+            }
+
+        .sideways-tabs.left-tabs .nav-item,
+        .sideways-tabs.right-tabs .nav-item {
+            transform: none;
+            height: auto;
+            width: auto;
+            margin-bottom: 0;
+        }
+
+        .right-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-top: 1px solid #dee2e6;
+            right: auto;
+            margin-top: auto;
+        }
+
+        .sideways-tabs.right-tabs .nav-link,
+        .right-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+            border-top-left-radius: 0;
+            margin-left: 0;
+            margin-top: -1px;
+            border-bottom-color: transparent;
+        }
+
+            .right-tabs .nav-link:hover {
+                border-top-color: transparent;
+                border-left-color: #dee2e6;
+                border-bottom-color: #e9ecef;
+            }
+
+            .sideways-tabs.right-tabs .nav-link.active,
+            .right-tabs .nav-link.active {
+                border-top-color: transparent;
+                border-right-color: #dee2e6;
+                border-bottom-color: #dee2e6;
+                border-left-color: #dee2e6;
+            }
+    }
+
+    @media (max-width: 26em) {
+        .left-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-bottom: 1px solid #dee2e6;
+            left: auto;
+            margin-top: auto;
+            padding-bottom: 0.25rem;
+        }
+
+        .right-tabs.nav-tabs {
+            flex-direction: row;
+            border-right: none;
+            border-left: none;
+            min-width: 100%;
+            border-top: 1px solid #dee2e6;
+            right: auto;
+            margin-top: auto;
+            padding-top: 0.25rem;
+        }
+
+        .sideways-tabs.left-tabs .nav-item,
+        .sideways-tabs.right-tabs .nav-item {
+            transform: none;
+            height: auto;
+            width: auto;
+            margin-bottom: 0;
+        }
+
+        .sideways-tabs.left-tabs .nav-link,
+        .sideways-tabs.right-tabs .nav-link,
+        .nav-tabs .nav-link {
+            width: 8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-radius: 0.25rem;
+            margin: 0.25rem;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+
+
+            .sideways-tabs.nav-tabs .nav-link:hover,
+            .nav-tabs .nav-link:hover {
+                border: 1px solid #e9ecef;
+                border-top-color: #e9ecef;
+                border-right-color: #e9ecef;
+                border-bottom-color: #e9ecef;
+                border-left-color: #e9ecef;
+            }
+
+        .sideways-tabs.nav-tabs .nav-link.active,
+        .left-tabs .nav-link.active,
+        .right-tabs .nav-link.active {
+            border-top-color: #dee2e6;
+            border-right-color: #dee2e6;
+            border-bottom-color: #dee2e6;
+            border-left-color: #dee2e6;
+        }
+    }
+
+    .tab-content {
+        padding: 1rem;
+    }

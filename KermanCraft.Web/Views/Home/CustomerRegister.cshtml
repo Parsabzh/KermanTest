@@ -1,0 +1,137 @@
+﻿@model KermanCraft.Application.ViewModels.Customer.AddCustomerFrontViewModel
+@{ ViewData["Title"] = "CustomerRegister";
+<link rel="stylesheet" href="/front/Content/css/Style3.css">
+}
+
+
+<div class="wrapper">
+    <div class="inner r1">
+        <div class="image-holder r2">
+            <img src="/front/Content/Images/registration-form-4.jpg" alt="">
+        </div>
+        <form asp-action="CustomerRegister" asp-controller="Home" method="post">
+            <h3>ثبت نام</h3>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div>
+                <input type="text" asp-for="Name" placeholder="نام" class="form-control">
+            </div>
+            <div>
+                <input type="text" asp-for="Family" placeholder=" نام خانوادگی" class="form-control">
+            </div>
+            <div>
+                <input type="text" asp-for="PhoneNumber" placeholder="شماره موبایل" class="form-control">
+            </div>
+            <div class="form-login ">
+                <button asp-controller="Home" asp-action="SendRegistrationCode" type="button" id="btn-1" class="" >ارسال کد</button>
+
+            </div>
+            <br />
+            <div>
+                <input type="text" placeholder="کد دریافتی" class="form-control">
+            </div>
+
+
+            @*<div>
+            <input type="text" asp-for="Address" placeholder="آدرس" class="form-control">
+        </div>*@
+            <div>
+                <input type="text" asp-for="NationalId" placeholder="کد ملی" class="form-control">
+            </div>
+            <div>
+                <input type="password" asp-for="Password" placeholder="پسورد" class="form-control" style="font-size: 15px;">
+            </div>
+            <div>
+                <input type="password" asp-for="ConfirmPassword" placeholder="تکرار پسورد" class="form-control" style="font-size: 15px;">
+            </div>
+            <br />
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked> همه قوانین را قبول دارم. <a href="#">قوانین</a>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <br />
+            <br />
+            <div class="form-login">
+                <button>ثبت</button>
+                <p>آیا حساب کاربری دارید؟ <a asp-action="Login" asp-controller="Home">ورود</a></p>
+            </div>
+
+        </form>
+        <br />
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+    <script>
+        var myVar = null;
+        var counter = 0;
+        $("#btn-1").click(function () {
+            function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                $("#btn-1").attr("disabled", true);
+                myVar=setInterval(function () {
+                        $("#btn-1").attr("disabled", true);
+                        minutes = parseInt(timer / 60, 10);
+                        seconds = parseInt(timer % 60, 10);
+
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                        display.text(minutes + ":" + seconds);
+
+                        if (--timer < 0) {
+                            timer = duration;
+                        }
+                        counter++;
+                        if (counter === 60) {
+                            clearInterval(myVar);
+                            $("#btn-1").removeAttr("disabled");
+                            display.text("ارسال کد");
+                        }
+                    },
+                    1000);
+
+            }
+
+          
+            jQuery(function ($) {
+                var twoMinutes = 60 * 1,
+                    display = $('#btn-1');
+                startTimer(twoMinutes, display);
+            });
+        });
+        function stop() {
+           
+        }
+    </script>
+  
+    <script>
+        $("#btn-1").click(function() {
+
+            const userPhone = $('#PhoneNumber').val();
+            //const code = $('#Code').val();
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("SendRegistrationCode", "Home")",
+                data: { userPhone: userPhone },
+                dataType: "text"
+            }).then(
+                Swal.fire(
+                    {
+                        icon: 'success',
+                        text: 'پیام با موفقیت ارسال شد.',
+                        confirmButtonText: 'باشه'
+                    }
+                )
+            );
+        });
+
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

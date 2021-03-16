@@ -1,0 +1,46 @@
+﻿@model KermanCraft.Application.ViewModels.Account.LoginViewModel
+@{ ViewData["Title"] = "Login"; }
+<link rel="stylesheet" href="/front/Content/css/Style3.css">
+
+
+<div class="wrapper">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="/front/Content/Images/registration-form-4.jpg" alt="">
+        </div>
+        <form class="m" asp-action="Login" asp-controller="Home" method="post">
+            <h3>ورود</h3>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <br />
+            <div class="">
+                <input type="text" asp-for="UserName" placeholder=" شماره موبایل" class="form-control">
+            </div>
+
+            <div>
+                <input type="password" asp-for="Password" placeholder="پسورد" class="form-control" style="font-size: 15px;">
+            </div>
+           
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" asp-for="RememberMe" /> مرا به خاطر بسپار
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked><a asp-controller="Home" asp-action="SendSms">رمز عبور را فراموش کرده ام</a>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="form-login">
+                <button type="submit">ورود</button>
+                <br />
+                <p>ایجاد حساب کاربری جدید <a asp-action="Login" asp-controller="Home">ثبت نام</a></p>
+            </div>
+
+        </form>
+        <br />
+    </div>
+</div>
+
+

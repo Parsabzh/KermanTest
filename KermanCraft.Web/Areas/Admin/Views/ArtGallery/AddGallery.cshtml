@@ -1,0 +1,146 @@
+﻿@model KermanCraft.Application.ViewModels.Gallery.GalleryViewModel
+@{
+    ViewData["Title"] = "AddGallery";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم  ثبت نمایشگاه
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="AddGallery" asp-controller="ArtGallery" asp-area="Admin" enctype="multipart/form-data">
+            <div class="form-body">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber">شماره موبایل صاحب نمایشگاه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-tablet"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="شماره موبایل صاحب نمایشگاه" asp-for="PhoneNumber">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Name">نام نمایشگاه</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-tablet"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="نام نمایشگاه" asp-for="Name">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Description">توضیحات</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-paragraph"></i>
+                        </span>
+                        <textarea asp-for="Description" id="summernote"></textarea>
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div> @*/.form-group*@
+                <div class="form-group">
+                    <label asp-for="StartDate">تاریخ شروع</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="text" class="has-persian-datepicker form-control" asp-for="StartDate">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="EndDate">تاریخ پایان</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-calendar"></i>
+                        </span>
+                        <input type="text" class="has-persian-datepicker form-control" asp-for="EndDate">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label asp-for="Status">
+                        فعال
+                        <input type="checkbox" class=" form-control" asp-for="Status">
+                    </label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+
+                </div><!-- /.form-group -->
+
+                <div class="form-group relative">
+                    <input type="file" class="form-control" name="files" id="imgInp">
+                    <label>آپلود فایل</label>
+                    <div class="input-group round">
+                        <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                        <span class="input-group-btn input-group-sm">
+                            <button type="button" class="btn btn-info">
+                                <i class="icon-picture"></i>
+                                آپلود پوستر نمایشگاه
+                                <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
+                            </button>
+                        </span>
+                    </div><!-- /.input-group -->
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-round">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Admin" asp-controller="ArtGallery" asp-action="GalleryList" class="btn btn-warning btn-round">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+{
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    
+    <script src="/assets/plugins/persian-date/persian-date.min.js"></script>
+    <script src="/assets/plugins/persian-datepicker/js/persian-datepicker.min.js"></script>
+    <script src="/assets/js/pages/calendar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'متن خود را بنویسید ...',
+                tabsize: 2,
+                height: 100,
+                rtl:true
+            });
+        });
+    </script>
+    <script src="~/js/PreviewImage.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+

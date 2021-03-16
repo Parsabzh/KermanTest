@@ -1,0 +1,24 @@
+﻿@model KermanCraft.Application.ViewModels.Artist.GetArtistUserViewModel
+@{
+    ViewData["Title"] = "GetArtist";
+}
+
+<form method="post" asp-area="Admin" asp-controller="Product" asp-action="GetArtist">
+
+    <div asp-validation-summary="All"></div>
+    <div style="" class="container">
+        <label asp-for="Mobile">شماره موبایل</label>
+        <input type="text" asp-for="Mobile" placeholder="شماره موبایل هنرمند" />
+        <span asp-validation-for="Mobile" class="text-danger"></span>
+        <button class="btn btn-darkblue text-white" type="submit">نمایش محصولات</button>
+    </div>
+
+</form>
+
+@section scripts
+{
+
+    <partial name="_ValidationScriptsPartial" />
+
+}
+

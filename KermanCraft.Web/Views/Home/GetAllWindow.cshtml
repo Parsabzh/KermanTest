@@ -1,0 +1,153 @@
+﻿@model IEnumerable<KermanCraft.Application.ViewModels.Window.WindowViewModel>
+@{
+    ViewData["Title"] = "GetAllWindow";
+}
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span>روزنه</span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+        @if (!Model.Any())
+        {
+            <div>موردی وجود ندارد!</div>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+                    <div class="card">
+                        @if (item.ImageViewModels.Any())
+                        {<img class="imgneg" src="~/images/Window/@item.ImageViewModels.First().ImageUrl" alt="WindowImage" />}
+                        else
+                        {
+                            <img class="imgneg" src="~/images/Window/37c051c2-5924-4252-bb0e-ce95bb3994a9.png" alt="WindowImage"/>
+                        }
+
+                        <br />
+                        <h5>@item.Subject</h5>
+                        <hr />
+
+
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <a asp-controller="Home" asp-action="GetWindow" asp-route-windowId="@item.WindowId" class="btn btnkhabar">جزییات </a>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+
+
+@*<div class="container mt-5">
+    <br /> <br />
+
+
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+            <div class="card">
+                <video width="100%" height="auto" controls src="https://static.cdn.asset.aparat.com/avt/21407985_15s.mp4">
+                    عدم پشتیانی مرورگر
+                </video>
+                <br />
+                <h5>دانلود</h5>
+                <hr />
+
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <button onclick="location.href='rozane-properties.html';" class="btnkhabar">جزییات </button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+            <div class="card">
+                <video width="100%" height="auto" controls src="https://static.cdn.asset.aparat.com/avt/21407985_15s.mp4">
+                    عدم پشتیانی مرورگر
+                </video>
+                <br />
+                <h5>دانلود</h5>
+                <hr />
+
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <button onclick="location.href='rozane-properties.html';" class="btnkhabar">جزییات </button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+            <div class="card">
+                <video width="100%" height="auto" controls src="https://static.cdn.asset.aparat.com/avt/21407985_15s.mp4">
+                    عدم پشتیانی مرورگر
+                </video>
+                <br />
+                <h5>دانلود</h5>
+                <hr />
+
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <button onclick="location.href='rozane-properties.html';" class="btnkhabar">جزییات </button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+            <div class="card">
+                <video width="100%" height="auto" controls src="https://static.cdn.asset.aparat.com/avt/21407985_15s.mp4">
+                    عدم پشتیانی مرورگر
+                </video>
+                <br />
+                <h5>دانلود</h5>
+                <hr />
+
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <button onclick="location.href='rozane-properties.html';" class="btnkhabar">جزییات </button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>*@
+
+<br />
+<br />
+<br />
+<br />
+

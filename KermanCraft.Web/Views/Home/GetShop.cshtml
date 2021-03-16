@@ -1,0 +1,107 @@
+﻿@model List<KermanCraft.Application.ViewModels.Product.ProductTypeViewModel>
+@{
+    ViewData["Title"] = "GetShop";
+    var n = 0;
+}
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+
+<br />
+<br />
+<br />
+<h1 class="text-white  heading-1"><span>فروشگاه</span></h1>
+
+<main class="site-main post-238 envato_tk_templates type-envato_tk_templates status-publish has-post-thumbnail hentry" role="main">
+    <div class="page-content">
+        <div data-elementor-type="wp-post" data-elementor-id="238" class="elementor elementor-238" data-elementor-settings="[]">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <section class="elementor-element elementor-element-2fa4a70 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2fa4a70" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                @{ var count = @Model.Count();}
+                                @for (var i = 0; i < 2; i++)
+                                {
+                                    if (count == 0)
+                                    {
+                                        break;
+                                    }
+                                    <div class="elementor-element elementor-element-bbf2aa5 elementor-column elementor-col-50 elementor-top-column" data-id="bbf2aa5" data-element_type="column">
+                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+
+
+                                                @for (var j = 0; j < 2; j++)
+                                                {
+                                                    if (count == 0)
+                                                    {
+                                                        break;
+                                                    }
+                                                    <section class="elementor-element elementor-element-c4e2d73 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="c4e2d73" data-element_type="section">
+                                                        <div class="elementor-container elementor-column-gap-default">
+                                                            <div class="elementor-row">
+                                                                @for (; n < 2; n++)
+                                                                {
+                                                                    if (count == 0)
+                                                                    {
+                                                                        break;
+                                                                    }
+                                                                    count--;
+                                                                    if ((n % 2) == 0 && n != 0)
+                                                                    {
+                                                                        break;
+                                                                    }
+                                                                    <div class="elementor-element elementor-element-4d2e005 elementor-column elementor-col-50 elementor-inner-column" data-id="4d2e005" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-497e123 elementor-cta--skin-cover elementor-cta--valign-middle elementor-bg-transform elementor-bg-transform-zoom-out elementor-animated-content elementor-widget elementor-widget-call-to-action" data-id="497e123" data-element_type="widget" data-widget_type="call-to-action.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="elementor-cta">
+                                                                                            <div class="elementor-cta__bg-wrapper">
+                                                                                                <div class="elementor-cta__bg elementor-bg" style="background-image: url(/images/ProductType/@Model[0].ImageName);"></div>
+                                                                                                <div class="elementor-cta__bg-overlay"></div>
+                                                                                            </div>
+                                                                                            <div class="elementor-cta__content">
+
+                                                                                                <a class="text-white" asp-controller="Home" asp-action="GetShopByType" asp-route-type="@Model[n].Name">
+                                                                                                    <h3 class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
+
+                                                                                                        @Model[n].Name
+
+                                                                                                    </h3>
+                                                                                                </a>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="post-tags">
+        </div>
+    </div>
+
+    <section id="comments" class="comments-area">
+    </section>
+</main>
+<br />
+<br />

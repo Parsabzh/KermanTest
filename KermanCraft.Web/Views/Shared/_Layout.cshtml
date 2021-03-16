@@ -1,0 +1,757 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using KermanCraft.Domain.Models.Share
+@inject IViewLocalizer Localizer
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>خانه</title>
+    <link rel="stylesheet" media="all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)" href="ipad-portrait.css" />
+    <link rel="stylesheet" media="all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)" href="ipad-landscape.css" />
+    <link rel="stylesheet" href="~/front/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/front/Content/css/css2/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/front/Scripts/jquery-3.0.0 - Copy.js"></script>
+    <script src="~/front/Scripts/owl.carousel.js"></script>
+    <script src="~/front/Script/jquery-3.5.1.js"></script>
+    <script src="~/front/Script/owl.curosol.js"></script>
+    <link rel="stylesheet" href="~/front/Content/css/owl.carosol.css" />
+    <link rel="stylesheet" href="~/front/Content/css/2.css" />
+    <script src="~/front/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" id="wp-block-library-css" href="~/front/Content/css/style.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" id="template-kit-export-css" href="~/front/Content/css/template-kit-export-public.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" id="hello-elementor-theme-style-css" href="~/front/Content/css/theme.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" id="elementor-icons-css" href="~/front/Content/css/elementor-icons.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" id="elementor-animations-css" href="~/front/Content/css/animations.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/css/frontend.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" id="elementor-frontend-css" href="~/front/Content/css/fontawesome.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/css/frontend.min1.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/css/style.min1.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/css/post-741.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-grid.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-grid.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-grid.min.css.map" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-reboot.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-reboot.css.map" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-reboot.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap-reboot.min.css.map" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap.css.map" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap.min.css" type='text/css' media='all' />
+    <link rel="stylesheet" href="~/front/Content/bootstrap.min.css.map" type='text/css' media='all' />
+    <script src="/front/Scripts/owlthem.js"></script>
+    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="/front/Content/css/solid.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="/front/Content/css/brands.min.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/front/Script/jquery.js"></script>
+    <script type="text/javascript" src="/front/Script/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="/front/Script/template-kit-export-public.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="/front/Content/css/main.css" rel="stylesheet" />
+    <script src="/front/Scripts/extention/choices.js"></script>
+    <link rel="shortcut icon" href="/front/Content/Images/logo.png" />
+
+</head>
+
+<body data-rsssl=1 class="envato_tk_templates-template-default single single-envato_tk_templates postid-7 elementor-default elementor-kit-123 elementor-page elementor-page-7">
+    @*<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="/front/Content/Images/logo.jpg">
+                </a>
+            </div>
+        </div>
+    </nav>*@
+    <div class="container-fluid fbg">
+        <div class="row  f">
+
+            <div class="ds5  col-sm-3">
+                <div class="dropdown">
+                    <button class="dropbtn ">Fa|En</button>
+                    <div class="dropdown-content">
+                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="fa-IR" >فارسی</a>
+                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US">English </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dw  col-sm-2 ">
+                <partial name="_LoginPartial" />
+            </div>
+
+            <div class="s003 col-sm-8">
+                <form>
+                    <div class="inner-form">
+
+                        <div class="input-field second-wrap">
+                            <input id="search" type="text" placeholder="جست و جو " />
+                        </div>
+                        <div class="input-field third-wrap">
+                            <button class="btn-search" type="button">
+                                <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br />
+
+    <header data-elementor-type="header" data-elementor-id="741" class="elementor elementor-741 elementor-location-header" data-elementor-settings="[]">
+        <div class="elementor-inner">
+
+            <div class="elementor-section-wrap">
+
+
+                <div class="elementor-element elementor-element-52100ad3 elementor-section-content-middle elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="52100ad3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+
+
+                    <div class="elementor-container elementor-column-gap-no">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-279803b5 elementor-column elementor-col-33 elementor-top-column" data-id="279803b5" data-element_type="column">
+
+
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-5537f118 elementor-widget elementor-widget-heading" data-id="5537f118" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <img class="log" src="~/front/Content/Images/logo.png" />
+                                                <!--<h2 class="elementor-heading-title elementor-size-default">صنایع دستی</h2>-->
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-7ad43acf elementor-nav-menu__align-center elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-hidden-desktop elementor-hidden-tablet elementor-nav-menu--indicator-classic elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="7ad43acf" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+
+
+                                            <div class="elementor-widget-container">
+                                                <nav role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+                                                    <ul id="menu-1-7ad43acf" class="elementor-nav-menu" data-smartmenus-id="16103182951883572">
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">اخبارفرش و صنایع</a>
+
+
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">نوشتار</a>
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a href="#" class="elementor-sub-item">معرفی</a>
+                                                                </li>
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllArticle" class="elementor-sub-item"> مقالات</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllWindow" class="elementor-sub-item">روزنه</a>
+                                                                </li>
+                                                                @*<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15">
+
+                                                                        <a sp-controller="Home" asp-action="GetArticle" class="elementor-sub-item">مطالب آموزشی</a>
+                                                                    </li>*@
+
+
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">اعضا و مراکز</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllArtist" class="elementor-sub-item">هنرمندان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="آموزشگاه" class="elementor-sub-item">آموزشگاه ها</a></li>
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="تولیدکننده" class="elementor-sub-item">صادر کنندگان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="آموزشگاه" class="elementor-sub-item">تولیدی ها</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="نگارخانه" class="elementor-sub-item">نگارخانه ها</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false" asp-controller="Home" asp-action="GetAllArtGallery">نگارخانه</a>
+
+
+                                                            @*<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                        <a href="#" class="elementor-sub-item">معرفی آثار گالری</a>
+                                                                    </li>
+
+
+                                                                </ul>*@
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">رویداد و دوره آموزشی</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllEvent" class="elementor-sub-item">رویداد </a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a sp-controller="Home" asp-action="GetAllCourse" class="elementor-sub-item">دوره های آموزشی </a></li>
+
+
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetShop" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">@Localizer["Shop"]</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllEvent" class="elementor-sub-item">سفال </a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a sp-controller="Home" asp-action="GetAllCourse" class="elementor-sub-item">جواهرات </a></li>
+
+
+
+                                                            </ul>
+
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11">
+                                                            <a asp-action="Index" asp-controller="Home" aria-current="page" class="elementor-item elementor-item-active">خانه</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                                <div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false" style="">
+                                                    <i class="eicon-menu-bar" aria-hidden="true"></i>
+                                                    <span class="elementor-screen-only">Menu</span>
+                                                </div>
+                                                <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="false" style="width: 360px; left: -20px;">
+                                                    <ul id="menu-2-7ad43acf" class="elementor-nav-menu" data-smartmenus-id="1610318295196517">
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-483">
+                                                            <a asp-controller="Home" asp-action="GetAllNews" class="elementor-sub-item">
+                                                                اخبارفرش و صنایع
+                                                            </a>
+
+
+
+                                                            @*برای ایجاد ساب منو*@
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">نوشتار</a>
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">معرفی</a>
+
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a href="#" class="elementor-sub-item">فرش</a>
+                                                                        </li>
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a href="#" class="elementor-sub-item">صنایع دستی</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">روزنه</a>
+
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllWindow" asp-route-category="فرش" class="elementor-sub-item">فرش</a>
+                                                                        </li>
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllWindow" asp-route-category="صنایع دستی" class="elementor-sub-item">صنایع دستی</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a href="#" class="elementor-sub-item"> مقالات</a>
+                                                                </li>
+                                                                @*<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                        <a asp-controller="Home" asp-action="GetAllWindow" class="elementor-sub-item">مطالب آموزشی</a>
+                                                                    </li>*@
+
+
+
+
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">اعضا و مراکز</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllArtist" class="elementor-sub-item">هنرمندان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="آموزشگاه" class="elementor-sub-item">آموزشگاه ها</a></li>
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="تولیدکننده" class="elementor-sub-item">تولیدی ها</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="صادرکننده" class="elementor-sub-item">صادرکنندگان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="نگارخانه" class="elementor-sub-item">نگارخانه ها</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetAllArtGallery" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">نگارخانه</a>
+
+
+                                                            @*<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                        <a href="#" class="elementor-sub-item">معرفی آثار گالری</a>
+                                                                    </li>
+
+
+                                                                </ul>*@
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">رویدادودوره آموزشی</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllCourse" class="elementor-sub-item">دوره اموزشی</a>
+                                                                </li>
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">رویداد</a>
+
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetWindow" asp-route-type="جشنواره" class="elementor-sub-item">جشنواره</a>
+                                                                        </li>
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllWindow" asp-route-category="نمایشگاه" class="elementor-sub-item">نمایشگاه</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+
+                                                                </li>
+
+
+                                                            </ul>
+
+
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetShop" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">@Localizer["Shop"]</a>
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllEvent" class="elementor-sub-item">سفال </a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a sp-controller="Home" asp-action="GetAllCourse" class="elementor-sub-item">جواهرات </a></li>
+
+
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11">
+                                                            <a asp-controller="Home" asp-action="Index" aria-current="page" class="elementor-item elementor-item-active">خانه</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="elementor-element elementor-element-22e7e5da elementor-hidden-phone elementor-column elementor-col-33 elementor-top-column" data-id="22e7e5da" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-584908d2 elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="584908d2" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+                                            <div class="elementor-widget-container">
+                                                <nav role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+                                                    <ul id="menu-1-584908d2" class="elementor-nav-menu" data-smartmenus-id="16101861858107708">
+
+
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetAllNews" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">اخبارفرش و صنایع</a>
+
+                                                        </li>
+
+
+                                                        @*منو اصلی*@
+
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">نوشتار</a>
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">معرفی</a>
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a href="#" class="elementor-sub-item">فرش</a>
+                                                                        </li>
+
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a href="#" class="elementor-sub-item">صنایع دستی</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+                                                                </li>
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">روزنه</a>
+
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllWindow" asp-route-category="فرش" class="elementor-sub-item">فرش</a>
+                                                                        </li>
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllWindow" asp-route-category="صنایع دستی" class="elementor-sub-item">صنایع دستی</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15">
+
+                                                                    <a asp-controller="Home" asp-action="GetAllArticle" class="elementor-sub-item">مقالات </a>
+                                                                </li>
+
+
+                                                                @*<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                        <a href="#" class="elementor-sub-item">مطالب اموزشی</a>
+                                                                    </li>*@
+
+                                                            </ul>
+                                                        </li>
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">اعضا و مراکز</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllArtist" class="elementor-sub-item">هنرمندان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="آموزشگاه" class="elementor-sub-item">آموزشگاه ها</a></li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="تولیدکننده" class="elementor-sub-item">تولیدی ها</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="صادرکننده" class="elementor-sub-item">صادرکنندگان</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+                                                                    <a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="نگارخانه" class="elementor-sub-item">نگارخانه ها</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </li>
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetAllArtGallery" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">نگارخانه</a>
+
+
+                                                        </li>
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">رویداد و دوره آموزشی</a>
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                                    <a href="#" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">رویداد</a>
+
+                                                                    <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllEvent" asp-route-type="جشنواره" class="elementor-sub-item">جشنواره</a>
+                                                                        </li>
+
+
+                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                            <a asp-controller="Home" asp-action="GetAllEvent" asp-route-type="نمایشگاه" class="elementor-sub-item">نمایشگاه</a>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+                                                                </li>
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllCourse" class="elementor-sub-item">دوره آموزشی</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-452">
+                                                            <a asp-controller="Home" asp-action="GetShop" class="elementor-item elementor-item-anchor has-submenu" id="sm-16101861858107708-1" aria-haspopup="true" aria-controls="sm-16101861858107708-2" aria-expanded="false">@Localizer["Shop"]</a>
+
+
+                                                            <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16101861858107708-2" role="group" aria-hidden="true" aria-labelledby="sm-16101861858107708-1" aria-expanded="false">
+
+
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17">
+                                                                    <a asp-controller="Home" asp-action="GetAllArtist" class="elementor-sub-item">سفال</a>
+                                                                </li>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a asp-controller="Home" asp-action="GetCompanyByType" asp-route-type="آموزشگاه" class="elementor-sub-item">جواهرات</a></li>
+
+
+
+
+                                                            </ul>
+                                                        </li>
+
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11">
+                                                            <a asp-controller="Home" asp-action="Index" aria-current="page" class="elementor-item elementor-item-active">خانه</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </nav>
+
+
+
+                                                <div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false" style="">
+                                                    <i class="eicon-menu-bar" aria-hidden="true"></i>
+                                                    <span class="elementor-screen-only">Menu</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-3ef31727 elementor-column elementor-col-33 elementor-top-column" data-id="3ef31727" data-element_type="column">
+
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--end navbar-->
+
+
+
+    @RenderBody()
+
+
+    <!--starrt fooete-->
+    <footer style="        background-color: #d3d3d3;" data-elementor-type="footer" data-elementor-id="746" class="elementor elementor-746 elementor-location-footer" data-elementor-settings="[]">
+
+        <div class=" footi elementor-inner">
+            <div class="elementor-section-wrap">
+                <section class="elementor-element elementor-element-15ea354f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="15ea354f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container1 elementor-section1  elementor-container tt elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-74fa5d10 elementor-column elementor-col-33 elementor-top-column" data-id="74fa5d10" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-6333ee36 elementor-widget elementor-widget-heading" data-id="6333ee36" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <h4 class="elementor-heading-title elementor-size-default">درباره ما</h4>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-2a7d142c elementor-widget elementor-widget-text-editor" data-id="2a7d142c" data-element_type="widget" data-widget_type="text-editor.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-text-editor elementor-clearfix">
+                                                    <p>
+                                                        «نخستین رویداد میراث دیجیتال» توسط شرکت میراث آرکا از استارتاپ های تحت حمایت معاونت فناوری و کاربردی سازی پژوهشگاه میراث فرهنگی و گردشگری در شهر یزد برگزار می شود .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-396ec5de elementor-column elementor-col-33 elementor-top-column" data-id="396ec5de" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-28d4db51 elementor-widget elementor-widget-heading" data-id="28d4db51" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <h4 class="elementor-heading-title elementor-size-default">شبکه های اجتماعی</h4>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-3953b688 elementor-shape-circle elementor-widget elementor-widget-social-icons" data-id="3953b688" data-element_type="widget" data-widget_type="social-icons.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-social-icons-wrapper">
+
+                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e88aedd">
+                                                        <span class="elementor-screen-only">phone</span>
+                                                        <i class="fab fa-telegram"></i>
+                                                    </a>
+                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e88aedd">
+                                                        <span class="elementor-screen-only">Instagram</span>
+                                                        <i class="fab fa-instagram"></i>
+                                                    </a>
+                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e88aedd">
+                                                        <span class="elementor-screen-only">whatsapp</span>
+                                                        <i class="fab fa-whatsapp"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-element  elementor-element-6405ee82 elementor-column elementor-col-33 elementor-top-column" data-id="6405ee82" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+
+
+                                        <div class="elementor-element elementor-element-34d396f8 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="34d396f8" data-element_type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
+                                            <div class="elementor-widget-container">
+                                                <img src="~/front/Content/Images/logo.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <br />
+                <br />
+                <section class="elementor-element footi elementor-element-746b4349 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="746b4349" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-7051a4a5 elementor-column elementor-col-100 elementor-top-column" data-id="7051a4a5" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-5ba4184a elementor-widget elementor-widget-heading" data-id="5ba4184a" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <h5 class="elementor-heading-title elementor-size-default">Copyright © narges najafi</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--end fooer-->
+
+    <script type="text/javascript" src="/front/Script/wp-embed.min.js"></script>
+    <script type="text/javascript" src="/front/Script/jquery.smartmenus.min.js"></script>
+    <script type="text/javascript" src="/front/Script/frontend-modules.min.js"></script>
+    <script type="text/javascript" src="/front/Script/jquery.sticky.min.js"></script>
+    <script>
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000, //2000ms = 2s;
+            autoplayHoverPause: true,
+        });
+    </script>
+    <script type='text/javascript'>
+        const choices = new Choices('[data-trigger]',
+            {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+
+
+        $(document).ready(function () {
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
+
+        var ElementorProFrontendConfig = { "ajaxurl": "https:\/\/theme.kotakkuning.com\/wp-admin\/admin-ajax.php", "nonce": "b8bf5a6de2", "i18n": { "toc_no_headings_found": "No headings were found on this page." }, "shareButtonsNetworks": { "facebook": { "title": "Facebook", "has_counter": true }, "twitter": { "title": "Twitter" }, "google": { "title": "Google+", "has_counter": true }, "linkedin": { "title": "LinkedIn", "has_counter": true }, "pinterest": { "title": "Pinterest", "has_counter": true }, "reddit": { "title": "Reddit", "has_counter": true }, "vk": { "title": "VK", "has_counter": true }, "odnoklassniki": { "title": "OK", "has_counter": true }, "tumblr": { "title": "Tumblr" }, "delicious": { "title": "Delicious" }, "digg": { "title": "Digg" }, "skype": { "title": "Skype" }, "stumbleupon": { "title": "StumbleUpon", "has_counter": true }, "mix": { "title": "Mix" }, "telegram": { "title": "Telegram" }, "pocket": { "title": "Pocket", "has_counter": true }, "xing": { "title": "XING", "has_counter": true }, "whatsapp": { "title": "WhatsApp" }, "email": { "title": "Email" }, "print": { "title": "Print" } }, "facebook_sdk": { "lang": "en_US", "app_id": "" }, "lottie": { "defaultAnimationUrl": "https:\/\/theme.kotakkuning.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json" } };
+    </script>
+    <script type="text/javascript" src='/front/Scripts/frontend.min.js'></script>
+    <script type="text/javascript" src='/front/Scripts/postion.min.js'></script>
+    <script type="text/javascript" src='/front/Scripts/dialog.min.js'></script>
+    <script type="text/javascript" src='/front/Scripts/waypoint.min.js'></script>
+    <script type="text/javascript" src='/front/Scripts/swiper.min.js'></script>
+    <script type="text/javascript" src='/front/Scripts/share.min.js'></script>
+    <script type="text/javascript">
+        var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "downloadImage": "Download image" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "version": "2.9.13", "urls": { "assets": "https:\/\/theme.kotakkuning.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "general": { "elementor_global_image_lightbox": "yes", "elementor_lightbox_enable_counter": "yes", "elementor_lightbox_enable_fullscreen": "yes", "elementor_lightbox_enable_zoom": "yes", "elementor_lightbox_enable_share": "yes", "elementor_lightbox_title_src": "title", "elementor_lightbox_description_src": "description" }, "editorPreferences": [] }, "post": { "id": 7, "title": "Home%20%E2%80%93%20Elementor", "excerpt": "", "featuredImage": "https:\/\/theme.kotakkuning.com\/wp-content\/uploads\/2020\/07\/Home.jpg" } };
+    </script>
+    <script type="text/javascript" src="/front/Script/frontend.min.js"></script>
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+</html>
+

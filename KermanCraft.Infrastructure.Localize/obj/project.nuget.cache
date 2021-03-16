@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "z4ebNXDDjz2VXoMMnWz22NBQRDplMdWZfbLltIZ6xIv+F58etSK7cUaj4wmntkYx6RREFUsI3l4Xxr0fUarOCg==",
+  "success": true,
+  "projectFilePath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Infrastructure.Localize\\KermanCraft.Infrastructure.Localize.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.10\\microsoft.extensions.configuration.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.10\\microsoft.extensions.configuration.abstractions.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.10\\microsoft.extensions.configuration.binder.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.10\\microsoft.extensions.dependencyinjection.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.10\\microsoft.extensions.dependencyinjection.abstractions.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.10\\microsoft.extensions.identity.core.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.logging\\3.1.10\\microsoft.extensions.logging.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.10\\microsoft.extensions.logging.abstractions.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.options\\3.1.10\\microsoft.extensions.options.3.1.10.nupkg.sha512",
+    "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.10\\microsoft.extensions.primitives.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

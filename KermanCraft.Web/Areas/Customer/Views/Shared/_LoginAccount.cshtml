@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using KermanCraft.Domain.Models.People
+@inject SignInManager<People> SignInManager
+@inject UserManager<People> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    {
+        var artistUser = await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+       
+            <a asp-area="Artist" asp-controller="Index" asp-action="Index" class="dropdown-toggle dropdown-hover" data-toggle="dropdown">
+                @*<img src="/images/AdminUser/@adminUser.ImageUrl" alt="عکس پرفایل" class="img-circle img-responsive " style="width: 10%; height: 10%; " >*@
+                <span>سلام! @artistUser.Name عزیز </span>
+                <i class="icon-arrow-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a asp-action="UpdateArtist" asp-controller="Index" asp-area="Artist" asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">
+                        <i class="icon-note"></i>
+                        ویرایش پروفایل
+                    </a>
+                </li>
+                <li>
+                    <a href="change_password.html">
+                        <i class="icon-key"></i>
+                        تفییر رمز عبور
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a asp-action="LogoutArtist" asp-controller="Index" asp-area="Artist" >
+                        <i class="icon-power"></i>
+                        خروج
+                    </a>
+
+                </li>
+            </ul>
+      
+    }
+}

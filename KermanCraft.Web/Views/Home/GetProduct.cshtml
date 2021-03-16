@@ -1,0 +1,333 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KermanCraft.Domain.Models.People
+@model KermanCraft.Application.ViewModels.Product.ProductViewModel
+@inject SignInManager<People> SignInManager
+@inject UserManager<People> UserManager
+@{ ViewBag.Title = "title";
+    Layout = "_Layout"; }
+
+
+<link rel="stylesheet" href="~/front/Content/css/namaslide.css">
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<link rel="stylesheet" href="~/front/Content/css/slider.css">
+<link rel="stylesheet" href="~/front/Content/css/slider - Copy.css">
+<link rel="stylesheet" href="~/front/Content/css/stylehonarmand.css">
+<link rel="stylesheet" href="~/front/Content/css/owl.carosol.css" />
+<link rel="stylesheet" href="~/front/Content/css/css5/style.css">
+<link rel="stylesheet" href="~/front/Content/css/magiczoom.css">
+
+
+<div class="container ss2">
+
+    <div class="row">
+
+        <div class="col-sm-7">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <div id="lb-back">
+                        <div id="lb-img"></div>
+                    </div>
+                    <img src="~/images/Product/@Model.ImageViewModels[0].ImageUrl" class="zoomD p" alt="ProductImage" />
+                </div>
+            </div>
+            <br />
+            <div class=" k row">
+
+                @foreach (var item in Model.ImageViewModels)
+                {
+    <div class="col-sm-4">
+        <div id="lb-back">
+            <div id="lb-img"></div>
+        </div>
+        <img src="~/images/Product/@item.ImageUrl" class="zoomD p" alt="ProductImage" />
+    </div>}
+
+                @*<div class="col-sm-4">
+                        <div id="lb-back">
+                            <div id="lb-img"></div>
+                        </div>
+                        <img src="~/front/Content/Images/rozane.jpg" class="zoomD p" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div id="lb-back">
+                            <div id="lb-img"></div>
+                        </div>
+                        <img src="~/front/Content/Images/rozane.jpg" class="zoomD p" />
+                    </div>*@
+            </div>
+        </div>
+
+
+        <div class="col-sm-5">
+
+            <div class="l5">
+                <br />
+
+                <p class="df">نام محصول:<span class="df1">@Model.ProductName</span><p />
+                <p class="df">
+                    نام برند:<span class="df1">
+                        @{ var user = await UserManager.FindByIdAsync(Model.PeopleId); } @user.Brand
+                    </span>
+                <p />
+                <p class="df">نوع:<span class="df1">@Model.Type</span><p />
+                <p class="df">جنس:<span class="df1">@Model.Material</span><p />
+                <p class="df">  کد:<span class="df1">@Model.Code</span><p />
+                <p class="df">قیمت:<span class="df1">@Model.Price.ToString("Nget")</span><p />
+                <p class="df">توضیحات:<span class="df1">@Model.Description</span><p />
+                <br />
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span> محصولات مرتبط</span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+        @foreach (var item in Model.ProductListViewModels)
+        {
+<div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+    <div class="card">
+        <img class="imgneg" src="~/images/Product/@item.ImageName" alt="ProductImage" />
+        <br />
+        <h5>@item.ProductName</h5>
+        <br />
+        <hr />
+        <br />
+        <a class="textm">
+            @item.Code
+        </a>
+        <a asp-controller="Home" asp-action="GetProduct" asp-route-productId="@item.ProductId" class=" dj ">  جزییات </a>
+        <br />
+        <a class=" dj ">
+            @{ var artist = await UserManager.FindByIdAsync(item.PeopleId); } @artist.Name @artist.Family
+        </a>
+    </div>
+</div>}
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<br>
+<br>
+<br />
+
+
+<h2 class="h8d">نظرات</h2>
+<div class="container">
+    <br />
+    <br />
+
+    <div class="container-fluid bg-feedback feedback-color">
+        <div class="row myrow">
+            <br />
+            <div class="col-sm-4 text-center change-order1">
+                <br />
+                <div class="hidden-xs">
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <h5>نظرات خود را ارسال کنید</h5>
+                <br />
+                @*<h5>تلفن: +99108440159</h5>
+                    <br />
+                    <h5>narges.njfi.k95@gmail.com</h5>
+                    <br />
+                    <h5>ارتباط با ما</h5>*@
+
+
+            </div>
+
+            <br /><br />
+            @if (SignInManager.IsSignedIn(User))
+            {
+<div class="col-sm-8 change-order">
+    <div class="col-sm-11 ss input-group">
+        <div class="col-sm-6 inputsmall">
+            <input type="text" placeholder=" نام کاربری" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <input type="email" placeholder="ایمیل" class="form-control" />
+        </div>
+    </div>
+    <div class="col-sm-11">
+        <div class="col-sm-12 top-padding">
+            <textarea class="form-control" rows="7" style="resize: none;">نظر خود را ثبت کنید...</textarea>
+        </div>
+    </div>
+    <div class="col-sm-11">
+        <div class="col-sm-12">
+            <button class="btn btn-default col-sm-2">ارسال</button>
+        </div>
+    </div>
+</div> }
+else
+{
+<div class="col-sm-8 change-order">
+    <div class="col-sm-11 ss input-group">
+        <div>لطفا برای ایجاد دیدگاه وارد شوید!</div>
+    </div>
+</div>      }
+
+        </div>
+        <br />
+    </div>
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 text-right">
+                <a class="btn btn-danger1 mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-danger1 mb-3 " href="#carouselExampleIndicators1" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                @if (!Model.CommentViewModels.Any())
+                {
+    <div>نظری وجود ندارد!</div> }
+else
+{
+<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <div class="row">
+                @for (var i = 0; i < 3; i++)
+                {
+<div class="col-sm-4  ">
+    <div class="bb">
+
+        <br />
+
+        <br />
+        <p>
+            @{ var cm = await UserManager.FindByIdAsync(Model.CommentViewModels[i].PeopleId); } @cm.Name @cm.Family
+        </p>
+        <p>@Model.CommentViewModels[i].Description </p>
+        <br />
+    </div>
+
+</div>}
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row">
+                @{ var cmLoop = Model.CommentViewModels.Skip(3); }
+                @foreach (var item in cmLoop)
+                {
+<div class="col-sm-4  ">
+    <div class="bb">
+
+        <br />
+
+        <br />
+        <p>@{ var cmUser = await UserManager.FindByIdAsync(item.PeopleId);} @cmUser.Name @cmUser.Family</p>
+        <p>@item.Description</p>
+        <br />
+    </div>
+
+</div>}
+
+            </div>
+        </div>
+    </div>
+</div>}
+            </div>
+        </div>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+
+@section scripts
+{
+
+    <script src="~/front/Script/owl.curosol.js"></script>
+    <script>
+        var zoomImg = function () {
+            // (A) CREATE EVIL IMAGE CLONE
+            var clone = this.cloneNode();
+            clone.classList.remove("zoomD");
+
+            // (B) PUT EVIL CLONE INTO LIGHTBOX
+            var lb = document.getElementById("lb-img");
+            lb.innerHTML = "";
+            lb.appendChild(clone);
+
+            // (C) SHOW LIGHTBOX
+            lb = document.getElementById("lb-back");
+            lb.classList.add("show");
+        };
+
+        window.addEventListener("load", function () {
+            // (D) ATTACH ON CLICK EVENTS TO ALL .ZOOMD IMAGES
+            var images = document.getElementsByClassName("zoomD");
+            if (images.length > 0) {
+                for (var img of images) {
+                    img.addEventListener("click", zoomImg);
+                }
+            }
+
+            // (E) CLICK EVENT TO HIDE THE LIGHTBOX
+            document.getElementById("lb-back").addEventListener("click", function () {
+                this.classList.remove("show");
+            })
+        });
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $("#btn-1").click(function() {
+
+            var text = $('#text').val();
+            var type = 'product';
+            var typeId =@Model.ProductId;
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("AddComment", "Home")",
+                data: { text: text,type:type,typeId:typeId },
+                dataType: "text"
+            }).then(
+                Swal.fire(
+                    {
+                        icon: 'success',
+                        text: 'پیام با موفقیت ارسال شد.',
+                        confirmButtonText: 'باشه'
+                    }
+                )
+            );
+        });
+
+    </script>
+}
+

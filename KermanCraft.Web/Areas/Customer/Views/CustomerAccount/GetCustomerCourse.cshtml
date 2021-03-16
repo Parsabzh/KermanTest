@@ -1,0 +1,99 @@
+﻿@using KermanCraft.Application.Services
+@using KermanCraft.Application.Tools.PersianDate
+@using KermanCraft.Application.Interfaces
+@inject IArtistService ArtistService
+@model IEnumerable<KermanCraft.Application.ViewModels.Course.CourseViewModel>
+@{
+    ViewData["Title"] = "GetCustomerCourse";
+}
+
+
+<div class="portlet-heading">
+    <div class="portlet-title">
+        <h3 class="title">
+            <i class="icon-user"></i>
+            لیست دوره آموزشی
+        </h3>
+    </div><!-- /.portlet-title -->
+</div><!-- /.portlet-heading -->
+<div class="table-responsive">
+    <div class="col-md-4 col-12 m-b-20">
+        <a class="btn btn-success btn-curve" asp-area="Admin" asp-action="AddCourse" asp-controller="EventCourse">
+            <i class="icon-plus"></i>
+            افزودن
+        </a>
+    </div>
+    <table class="table table-bordered table-hover table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>نام</th>
+                <th>نام برگزار کننده</th>
+                <th>تاریخ</th>
+                <th>وضعیت</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td>موردی یافت نشد.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.Subject
+                        </td>
+                        @{
+                            var user = await ArtistService.GetArtistUserById(item.PeopleId);
+                            var name = $"{user.Entity?.Name} {user.Entity?.Family}";
+                            var date = PersianDate.ToPersianDateString(item.DateTime);
+                        }
+                        <td>
+                            @name
+                        </td>
+                        <td>
+                            @date
+                        </td>
+                        @if (item.Status)
+                        {
+                            <td>
+                                <label class="label-success round">فعال</label>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <label class="label-danger round">غیرفعال</label>
+                            </td>
+
+                        }
+                      
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <script src="/assets/plugins/data-table/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/pages/datatable.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    
+    <!-- END PAGE JAVASCRIPT -->
+}
+
+
+
+

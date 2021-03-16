@@ -1,0 +1,60 @@
+﻿@model KermanCraft.Application.ViewModels.Product.ProductTypeViewModel
+@{
+    ViewData["Title"] = "AddProductType";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم ثبت نوع محصول
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="AddProductType" asp-controller="Product" asp-area="Artist" enctype="multipart/form-data">
+            <div class="form-body">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name">عنوان </label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-box"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="عنوان" asp-for="Name">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div><!-- /.form-group -->
+           
+            </div>
+            <div class="form-group relative">
+                <input type="file" class="form-control" name="files" id="imgInp" asp-for="ImageName">
+                <label>آپلود فایل</label>
+                <div class="input-group round">
+                    <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                    <span class="input-group-btn input-group-sm">
+                        <button type="button" class="btn btn-info">
+                            <i class="icon-picture"></i>
+                            آپلود عکس 
+                            <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
+                        </button>
+                    </span>
+                </div><!-- /.input-group -->
+                <div class="help-block"></div>
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+{
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+

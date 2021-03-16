@@ -1,0 +1,53 @@
+﻿@model IEnumerable<KermanCraft.Application.ViewModels.Product.ProductViewModel>
+@{
+    ViewData["Title"] = "GetShopByType";
+}
+
+<link rel="stylesheet" href="~/front/Content/css/cardrozane .css" />
+<div class="container mt-5">
+    <br /> <br />
+    <h1 class="text-white  heading-1"><span>محصولات </span></h1>
+
+    <br />
+    <br />
+    <div class="row">
+       @foreach (var item in Model)
+       {
+           <div class="col-lg-3 box col-md-6 col-xs-12 pl-1 pr-1">
+               <div class="card">
+                   <img class="imgneg" src="~/images/Product/@item.ImageViewModels[0].ImageUrl" alt="ProductImage"/>
+                   <br />
+                   <h5>@item.ProductName</h5>
+                   <br />
+                   <hr />
+                   <br />
+                   <a class="textm">
+                       @item.Price.ToString("N")
+                   </a>
+                   @*<div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <a asp-controller="Home" asp-action="GetProduct" asp-route-productId="1"  class="btn btnkhabar">جزییات محصول</a>
+                    </div>
+                    <div class="col"></div>
+                </div>*@
+                   <div class="row">
+                       <div class="col"></div>
+                       <div class="col">
+                           <a asp-controller="Home" asp-action="GetProduct" asp-route-productId="@item.ProductId"> <button  class="btnkhabar1">جزییات محصول</button></a>
+                       </div>
+                       <div class="col"></div>
+                   </div>
+               </div>
+           </div>
+       }
+    
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<br>
+<br>

@@ -1,0 +1,417 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="rtl">
+<head>
+    <title>مدیریت سایت صنایع دستی کرمان</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مدیریت سایت صنایع دستی کرمان ">
+    <meta name="keywords" content="">
+    <meta name="fontiran.com:license" content="NE29X">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <!-- BEGIN CSS -->
+    <link href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/plugins/bootstrap-rtl/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
+    <link href="/assets/plugins/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/assets/plugins/simple-line-icons/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="/assets/plugins/paper-ripple/dist/paper-ripple.min.css" rel="stylesheet">
+    <link href="/assets/plugins/iCheck/skins/square/_all.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/colors.css" rel="stylesheet">
+    <link href="/assets/plugins/persian-datepicker/css/persian-datepicker.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/persian-datepicker/css/theme/persian-datepicker-blue.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/fe01964885.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <!-- END CSS -->
+</head>
+<body class="active-ripple theme-blue fix-header sidebar-extra">
+    <!-- BEGIN LOEADING -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div><!-- /loader -->
+    <!-- END LOEADING -->
+    <!-- BEGIN HEADER -->
+    @await Component.InvokeAsync("NToastNotify")
+
+    <div class="navbar navbar-fixed-top" id="main-navbar">
+        <div class="header-right">
+            <a asp-action="Index" asp-controller="Admin" asp-area="Admin" class="logo-con">
+                <img src="/assets/images/1.png" class="img-responsive center-block w-50 h-50" alt="لوگو ">
+            </a>
+        </div><!-- /.header-right -->
+        <div class="header-left">
+            <div class="top-bar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="btn" id="toggle-sidebar">
+                            <span></span>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                 
+                    <li class="dropdown dropdown-user ">
+                        <partial name="_LoginAccount" />
+                    </li>
+                </ul><!-- /.navbar-left -->
+            </div><!-- /.top-bar -->
+        </div><!-- /.header-left -->
+    </div><!-- /.navbar -->
+    <!-- END HEADER -->
+    <!-- BEGIN WRAPPER -->
+    <div id="wrapper">
+
+        <!-- BEGIN SIDEBAR -->
+        <div id="sidebar">
+
+            <div class="side-menu-container">
+                <ul class="metismenu" id="side-menu">
+                    <li>
+                        <a asp-action="AdminUserList" asp-controller="Admin" asp-area="Admin" class="dropdown-toggle">
+
+                            <i class="fas fa-user-tie"></i>
+
+                            <span>کاربران </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="AdminUserList" asp-controller="Admin" asp-area="Admin" class="">
+
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>لیست کاربران</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddAdminUser" asp-controller="Admin" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد کاربر</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a asp-action="ArtistUserList" asp-controller="Artist" asp-area="Admin" class="dropdown-toggle">
+                            <i class="icon-user"></i>
+                            <span>هنرمندان </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="ArtistUserList" asp-controller="Artist" asp-area="Admin" class="">
+                                    <i class="icon-user"></i>
+                                    <span>لیست هنرمندان</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddArtistUser" asp-controller="Artist" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد هنرمند</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a asp-action="CustomerList" asp-controller="Customer" asp-area="Admin" class="dropdown-toggle">
+
+                            <i class="fas fa-users"></i>
+
+                            <span>مشتریان </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="CustomerList" asp-controller="Customer" asp-area="Admin" class="">
+
+                                    <i class="fas fa-users"></i>
+
+                                    <span>لیست مشتریان</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddCustomer" asp-controller="Customer" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد مشتری</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a asp-action="GetArtist" asp-controller="Product" asp-area="Admin" class="dropdown-toggle">
+
+                            <i class="icon-bag"></i>
+
+                            <span>محصولات </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="AllProductList" asp-controller="Product" asp-area="Admin" class="">
+
+                                    <i class="icon-list"></i>
+
+                                    <span>لیست محصولات </span>
+                                </a>
+                                <a asp-action="GetArtist" asp-controller="Product" asp-area="Admin" class="">
+
+                                    <i class="icon-list"></i>
+
+                                    <span>لیست محصولات هنرمند</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddProduct" asp-controller="Product" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد محصول</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="ProductTypeList" asp-controller="Product" asp-area="Admin" class="">
+                                    <i class="fas fa-archive"></i>
+                                    <span>لیست نوع محصول</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddProductType" asp-controller="Product" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد نوع محصول</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+
+                            <i class="fas fa-newspaper"></i>
+
+                            <span>روزنه و اخبار </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="WindowList" asp-controller="WindowNews" asp-area="Admin" class="">
+
+                                    <i class="fas fa-newspaper"></i>
+
+                                    <span>لیست روزنه ها</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddWindow" asp-controller="WindowNews" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد روزنه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="NewsList" asp-controller="WindowNews" asp-area="Admin" class="">
+
+                                    <i class="fas fa-newspaper"></i>
+
+                                    <span>لیست اخبار</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddNews" asp-controller="WindowNews" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد خبر</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="ArticleList" asp-controller="WindowNews" asp-area="Admin" class="">
+
+                                    <i class="fas fa-newspaper"></i>
+
+                                    <span>لیست مقالات</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddArticle" asp-controller="WindowNews" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>ایجاد مقاله</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+
+                            <i class="fab fa-envira"></i>
+
+                            <span>گالری و نگارخانه </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="ArtGalleryList" asp-controller="ArtGallery" asp-area="Admin" class="">
+
+                                    <i class="icon-list"></i>
+
+                                    <span>لیست محصولات نگارخانه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddArtGallery" asp-controller="ArtGallery" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>افزودن محصول به نگار خانه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="GalleryList" asp-controller="ArtGallery" asp-area="Admin" class="">
+
+                                    <i class="icon-list"></i>
+
+                                    <span>لیست نمایشگاه ها</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddGallery" asp-controller="ArtGallery" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>افزودن نمایشگاه</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+
+                            <i class="fas fa-calendar-week"></i>
+
+                            <span>رویداد و دوره آموزشی </span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a asp-action="EventList" asp-controller="EventCourse" asp-area="Admin" class="">
+
+                                    <i class="icon-list"></i>
+
+                                    <span>لیست رویدادها</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddEvent" asp-controller="EventCourse" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>افزودن رویداد </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="CourseList" asp-controller="EventCourse" asp-area="Admin" class="">
+                                    <i class="icon-list"></i>
+                                    <span>لیست دوره آموزشی </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-action="AddCourse" asp-controller="EventCourse" asp-area="Admin" class="">
+                                    <i class="icon-plus"></i>
+                                    <span>افزودن دوره آموزشی </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">
+
+                        <i class="icon-bag"></i>
+
+                        <span>اعضا و مراکز </span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a asp-action="CompanyList" asp-controller="Company" asp-area="Admin" class="">
+
+                                <i class="icon-list"></i>
+
+                                <span>لیست مراکز</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="AddCompany" asp-controller="Company" asp-area="Admin" class="">
+                                <i class="icon-plus"></i>
+                                <span>افزودن </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">
+
+                        <i class="fas fa-file-invoice-dollar"></i>
+
+                        <span>پکیج </span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a asp-action="PackageList" asp-controller="Package" asp-area="Admin" class="">
+
+                                <i class="icon-list"></i>
+
+                                <span>لیست پکیج ها</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="AddPackage" asp-controller="Package" asp-area="Admin" class="">
+                                <i class="icon-plus"></i>
+                                <span>افزودن </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+                </ul><!-- /#side-menu -->
+            </div><!-- /.side-menu-container -->
+        </div><!-- /#sidebar -->
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div id="page-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="portlet box border shadow">
+
+                        <div class="portlet-body">
+                            <div>
+                                @RenderBody()
+                            </div>
+                        </div><!-- /.portlet-body -->
+                    </div><!-- /.portlet -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /#page-content -->
+        <!-- END PAGE CONTENT -->
+
+    </div><!-- /#wrapper -->
+    <!-- END WRAPPER -->
+
+    <div class="row footer-container">
+        <div class="col-md-12">
+            <div class="copyright">
+                <p class="pull-right">
+                    کلیه حقوق سیرا کافه محفوظ می باشد و کپی برداری از آن به هیچ عنوان جایز نیست.
+                </p>
+                <p class="pull-left ltr tahoma">
+                    <span>©</span>
+                    SiraCafe
+                </p>
+            </div><!-- /.copyright -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+    <!-- BEGIN JS -->
+    <script src="/assets/plugins/jquery/dist/jquery-1.12.4.min.js"></script>
+    <script src="/assets/plugins/jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/assets/plugins/popper/popper.min.js"></script>
+    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <script src="/assets/plugins/paper-ripple/dist/PaperRipple.min.js"></script>
+    <script src="/assets/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="/assets/plugins/screenfull/dist/screenfull.min.js"></script>
+    <script src="/assets/plugins/iCheck/icheck.min.js"></script>
+    <script src="/assets/plugins/switchery/dist/switchery.js"></script>
+    <script src="/assets/js/core.js"></script>
+
+    <script asp></script>
+    @await RenderSectionAsync("scripts", false)
+
+</body>
+</html>
+

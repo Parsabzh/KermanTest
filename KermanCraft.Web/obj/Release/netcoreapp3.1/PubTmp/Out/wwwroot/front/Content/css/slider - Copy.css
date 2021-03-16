@@ -1,0 +1,87 @@
+.ss2{
+    margin-top:70px;
+    text-align:right;
+    direction:rtl !important;
+}
+.ss1 {
+    margin-top: 70px;
+    text-align: right;
+    direction: rtl !important;
+}
+.imgneg{
+    border-radius:25px;
+   margin-bottom:25px;
+}
+.ppro{
+
+    color:black;
+    padding:25px;
+   
+    text-align:center;
+}
+.h8d {
+    text-align: center;
+    direction: rtl;
+    color: #201f1f !important;
+    margin: 25px;
+}
+.l5{
+
+border:1px solid black;
+border-radius:25px;
+padding:20px;
+
+}
+.l54 {
+    background-color:white;
+    margin:20px ;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 30px;
+}
+.ss1 {
+    background-color: #d9a7a7;
+    border-radius: 30px !important;
+    border-radius: 40px !important;
+}
+.df1 {
+    margin-right:10px;
+    text-align: right !important;
+    color:#808080;
+    font-family: 'Open Sans' !important;
+}
+.dff {
+    margin-bottom:30px;
+    margin-right:10px;
+    text-align: right !important;
+    color: black;
+    font-family: 'Open Sans' !important;
+    border-radius: 100%;
+    width:150px;
+    height: 150px;
+}
+.df{
+
+    padding-right:30px;
+    text-align:right !important;
+   
+    color:black;
+    font-family:'Open Sans' !important;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url('../Fonts/Fontsirransans.eot');
+    src: url('IRANSans.svg#IRANSans') format('svg'), url('IRANSans.ttf') format('truetype'), url('IRANSans.woff') format('woff');
+    src: url('../Fonts/Fontsirransans.eot?#iefix') format('embedded-opentype'), url('../Fonts/Fontsirransans.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "tanha";
+    src: url('../Fonts/Tanha.eot');
+    src: url('../Fonts/Tanha.ttf') format('truetype'), url('../Fonts/Tanha.woff') format('woff');
+    src: url('../Fonts/Tanha.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

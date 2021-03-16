@@ -1,0 +1,64 @@
+﻿@model KermanCraft.Application.ViewModels.Tag.TagViewModel
+@{
+    ViewData["Title"] = "AddTag";
+}
+
+<div class="portlet box border shadow">
+    <div class="portlet-heading">
+        <div class="portlet-title">
+            <h3 class="title">
+                <i class="icon-user"></i>
+                فرم ثبت برچسب محصول
+            </h3>
+        </div><!-- /.portlet-title -->
+    </div><!-- /.portlet-heading -->
+    <div class="portlet-body m-auto ">
+        <form role="form" method="POST" asp-action="AddTag" asp-controller="Product" asp-area="Admin" >
+            <div class="form-body">
+                <input type="hidden" asp-for="ProductFkId"/>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Subject">عنوان </label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fas fa-box"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="عنوان" asp-for="Subject">
+                    </div><!-- /.input-group -->
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div><!-- /.form-group -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-info btn-curve">
+                        <i class="icon-check"></i>
+                        ذخیره
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </button>
+                    <a asp-area="Admin" asp-controller="Product" asp-action="TagList" class="btn btn-warning btn-curve">
+                        بازگشت
+                        <i class="icon-close"></i>
+                        <div class="paper-ripple">
+                            <div class="paper-ripple__background"></div>
+                            <div class="paper-ripple__waves"></div>
+                        </div>
+                    </a>
+                </div><!-- /.form-actions -->
+            </div>
+        </form>
+    </div><!-- /.portlet-body -->
+</div>
+
+
+
+@section scripts
+{
+
+    <!-- BEGIN PAGE JAVASCRIPT -->
+    <partial name="_ValidationScriptsPartial" />
+    <!-- END PAGE JAVASCRIPT -->
+
+}
+
+
