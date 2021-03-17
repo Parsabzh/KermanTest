@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3jQSnnFPnzWl+rvJbRncNR2zTKK+qCH9f7LnsBAaHOaXmaIK50MTlyXkv24ocaAkcR04Lp4W0Jv/b5uFaHi0bw==",
+  "dgSpecHash": "Y7imuTcy2N5wqpBVGB96eCxZXSlFIjg2yp0rKz1tSe1Kl4p41KdI/65+V5x3Dlrn0PBxcO0phpaecvXQcqym5w==",
   "success": true,
-  "projectFilePath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
+  "projectFilePath": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\Parsa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",

@@ -432,11 +432,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\KermanCraft\\kermancraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
+      "projectUniqueName": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
       "projectName": "KermanCraft.Domain",
-      "projectPath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
+      "projectPath": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Domain\\KermanCraft.Domain.csproj",
       "packagesPath": "C:\\Users\\Parsa\\.nuget\\packages\\",
-      "outputPath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Domain\\obj\\",
+      "outputPath": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -458,8 +458,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\KermanCraft\\kermancraft\\KermanCraft.Infrastructure.Localize\\KermanCraft.Infrastructure.Localize.csproj": {
-              "projectPath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Infrastructure.Localize\\KermanCraft.Infrastructure.Localize.csproj"
+            "C:\\KermanCraft\\KermanCraft\\KermanCraft.Infrastructure.Localize\\KermanCraft.Infrastructure.Localize.csproj": {
+              "projectPath": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Infrastructure.Localize\\KermanCraft.Infrastructure.Localize.csproj"
             }
           }
         }

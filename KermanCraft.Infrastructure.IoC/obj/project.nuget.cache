@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QRwi0vo+Qmr4UqdInd/IpWuMEVdRjhbvP0yJEuxaXA+oBvdVcPtc/xmtQ1CqDWBgBSDjYNA7pPIyba/OqwDy/g==",
+  "dgSpecHash": "OY/W/r4jJEmbQ7yvbf+dGmibHMszmWGipTBTXGWHsjnVArdzGxZybedgx5tmIsd/MWJQYlhPW0eDL4Jwek1R9Q==",
   "success": true,
-  "projectFilePath": "C:\\KermanCraft\\kermancraft\\KermanCraft.Infrastructure.IoC\\KermanCraft.Infrastructure.IoC.csproj",
+  "projectFilePath": "C:\\KermanCraft\\KermanCraft\\KermanCraft.Infrastructure.IoC\\KermanCraft.Infrastructure.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Parsa\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Parsa\\.nuget\\packages\\kavenegardotnetcore\\1.0.1\\kavenegardotnetcore.1.0.1.nupkg.sha512",

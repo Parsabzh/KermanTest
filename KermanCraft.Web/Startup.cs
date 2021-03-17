@@ -54,14 +54,14 @@ namespace KermanCraft.Web
                 .AddEntityFrameworkStores<KermanCraftDb>().AddDefaultTokenProviders()
                 .AddErrorDescriber<PersianIdentityErrorDescriber>();
             services.AddAuthentication().AddCookie(o => o.Cookie.Expiration  = TimeSpan.FromMinutes(30));
-            services.AddSession(o =>
-            {
+            //services.AddSession(o =>
+            //{
 
-                //o.Cookie.Expiration = TimeSpan.FromMinutes(30);
-                o.IOTimeout = TimeSpan.FromMinutes(30);
-                o.IdleTimeout = TimeSpan.FromMinutes(30);
-                o.Cookie.IsEssential = true;
-            });
+            //    //o.Cookie.Expiration = TimeSpan.FromMinutes(30);
+            //    o.IOTimeout = TimeSpan.FromMinutes(30);
+            //    o.IdleTimeout = TimeSpan.FromMinutes(30);
+            //    o.Cookie.IsEssential = true;
+            //});
             services.Configure<SecurityStampValidatorOptions>(options =>
             {
                 options.ValidationInterval = TimeSpan.FromMinutes(10);
@@ -96,7 +96,14 @@ namespace KermanCraft.Web
                 options.DataAnnotationLocalizerProvider = (type, factory) =>
                     factory.Create(typeof(ShareResource));
             });
-            
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
             RegisterServices(services);
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -145,7 +152,7 @@ namespace KermanCraft.Web
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 
